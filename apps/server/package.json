@@ -2,6 +2,7 @@
   "name": "@trinity/server",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "nx": {
     "targets": {
       "build": {
@@ -52,5 +53,14 @@
         "command": "docker build -f apps/server/Dockerfile . -t @trinity/server"
       }
     }
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.10",
+    "@nestjs/core": "^10.3.10",
+    "@nestjs/platform-express": "^10.3.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^20"
   }
 }
