@@ -1,0 +1,12 @@
+{
+  "name": "@trinity/config-typescript",
+  "version": "0.0.1",
+  "private": true,
+  "sideEffects": false,
+  "exports": {
+    "./base.json": "./base.json",
+    "./nextjs.json": "./nextjs.json",
+    "./react-library.json": "./react-library.json",
+    "./package.json": "./package.json"
+  }
+}

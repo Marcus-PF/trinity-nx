@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/vitest",
+    "jsx": "preserve",
+    "types": ["vitest", "vitest/globals", "node"],
+    "module": "esnext",
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    "app/**/*.test.{ts,tsx,js,jsx}",
+    "app/**/*.spec.{ts,tsx,js,jsx}",
+    "app/**/*.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.json"
+    }
+  ]
+}

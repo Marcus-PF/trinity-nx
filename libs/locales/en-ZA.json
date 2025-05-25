@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "dashboard": "Dashboard"
+  },
+  "cta": {
+    "join_now": "Join Now",
+    "learn_more": "Learn More",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "forgot_password": "Forgot Password?"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "required": "This field is required"
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "success": "Operation successful"
+  },
+  "footer": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2025 Trinity"
+  }
+}

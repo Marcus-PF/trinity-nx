@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Tuisblad",
+    "about": "Oor Ons",
+    "contact": "Kontak",
+    "services": "Dienste",
+    "dashboard": "Paneelbord"
+  },
+  "cta": {
+    "join_now": "Sluit Nou Aan",
+    "learn_more": "Leer Meer",
+    "submit": "Indien",
+    "cancel": "Kanselleer"
+  },
+  "auth": {
+    "login": "Teken In",
+    "logout": "Teken Uit",
+    "register": "Registreer",
+    "forgot_password": "Wagwoord Vergete?"
+  },
+  "form": {
+    "name": "Naam",
+    "email": "E-pos",
+    "password": "Wagwoord",
+    "confirm_password": "Bevestig Wagwoord",
+    "required": "Hierdie veld is verpligtend"
+  },
+  "status": {
+    "loading": "Laai tans...",
+    "error": "Iets het verkeerd geloop",
+    "success": "Operasie suksesvol"
+  },
+  "footer": {
+    "terms": "Diensvoorwaardes",
+    "privacy": "Privaatheidsbeleid",
+    "copyright": "© 2025 Trinity"
+  }
+}

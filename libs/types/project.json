@@ -1,0 +1,16 @@
+{
+  "name": "@trinity/types",
+  "projectType": "library",
+  "sourceRoot": "libs/types/src",
+  "root": "libs/types",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [],
+      "options": {
+        "lintFilePatterns": ["libs/types/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["scope:shared", "type:types"]
+}

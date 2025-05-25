@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "contact": "Contato",
+    "services": "Serviços",
+    "dashboard": "Painel"
+  },
+  "cta": {
+    "join_now": "Junte-se agora",
+    "learn_more": "Saiba mais",
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  },
+  "auth": {
+    "login": "Entrar",
+    "logout": "Sair",
+    "register": "Registrar",
+    "forgot_password": "Esqueceu a senha?"
+  },
+  "form": {
+    "name": "Nome",
+    "email": "Email",
+    "password": "Senha",
+    "confirm_password": "Confirmar senha",
+    "required": "Este campo é obrigatório"
+  },
+  "status": {
+    "loading": "Carregando...",
+    "error": "Algo deu errado",
+    "success": "Operação bem-sucedida"
+  },
+  "footer": {
+    "terms": "Termos de serviço",
+    "privacy": "Política de Privacidade",
+    "copyright": "© 2025 Trinity"
+  }
+}

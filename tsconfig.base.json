@@ -1,21 +1,22 @@
 {
+  "extends": "./libs/config-typescript/base.json",
   "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["es2022"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
-    "customConditions": ["development"]
+    "baseUrl": ".",
+    "paths": {
+      "@trinity/types/*": ["libs/types/src/*"],
+      "@trinity/utils/*": ["libs/utils/src/*"],
+      "@trinity/hooks/*": ["libs/hooks/src/*"],
+      "@trinity/auth/*": ["libs/auth/src/*"],
+      "@trinity/i18n/*": ["libs/i18n/src/*"],
+      "@trinity/locales/*": ["libs/locales/src/*"],
+      "@trinity/ui/*": ["libs/ui/src/*"],
+      "@trinity/api-client/*": ["libs/api-client/src/*"],
+      "@trinity/config-eslint": ["libs/config-eslint/index.mjs"],
+      "@trinity/config-eslint/base": ["libs/config-eslint/base.mjs"],
+      "@trinity/config-eslint/next": ["libs/config-eslint/next.mjs"],
+      "@trinity/config-eslint/react-internal": ["libs/config-eslint/react-internal.mjs"],
+      "@trinity/config-prettier": ["libs/config-prettier/index.js"],
+      "@trinity/config-typescript/*": ["libs/config-typescript/*"]
+    }
   }
 }

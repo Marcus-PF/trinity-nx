@@ -44,3 +44,13 @@ Thumbs.db
 .github/instructions/nx.instructions.md
 
 test-output
+
+# Next.js
+.next
+out
+
+.cursor\rules\nx-rules.mdc
+.github\instructions\nx.instructions.md
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
