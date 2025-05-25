@@ -17,8 +17,7 @@
   "dependencies": {
     "@trinity/types": "workspace:*",
     "@trinity/locales": "workspace:*",
-    "zod": "^3.22.4",
-    "react": "^19.1.0"
+    "zod": "^3.22.4"
   },
   "peerDependencies": {
     "react": "^19.1.0"

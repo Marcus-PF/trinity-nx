@@ -13,7 +13,6 @@
   "include": ["src/**/*"],
   "exclude": [
     "dist",
-    "jest.config.ts",
     "**/*.test.*",
     "**/*.spec.*"
   ]
