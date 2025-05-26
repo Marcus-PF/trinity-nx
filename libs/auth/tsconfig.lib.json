@@ -3,10 +3,10 @@
   "compilerOptions": {
     "composite": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "../../dist/libs/auth",
     "rootDir": "src",
     "baseUrl": ".",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/libs/auth/tsconfig.lib.tsbuildinfo",
     "jsx": "react-jsx",
     "types": ["node"]
   },
@@ -15,5 +15,13 @@
     "dist",
     "**/*.test.*",
     "**/*.spec.*"
+  ],
+  "references": [
+    {
+      "path": "../types/tsconfig.lib.json"
+    },
+    {
+      "path": "../utils/tsconfig.lib.json"
+    }
   ]
 }

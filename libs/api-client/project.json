@@ -1,13 +1,14 @@
 {
   "name": "@trinity/api-client",
-  "projectType": "library",
+  "root": "libs/api-client",
   "sourceRoot": "libs/api-client/src",
+  "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "outputPath": "node_modules/@trinity/api-client",
         "main": "libs/api-client/src/index.ts",
+        "outputPath": "dist/libs/api-client",
         "tsConfig": "libs/api-client/tsconfig.lib.json"
       }
     },
@@ -18,5 +19,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["api", "shared"]
 }

@@ -26,7 +26,7 @@ export function useEventListener<K extends keyof GlobalEventHandlersEventMap>(
   listener: (event: GlobalEventHandlersEventMap[K]) => void,
   options?: boolean | AddEventListenerOptions
 ) {
-  const savedHandler = useRef<typeof listener>();
+  const savedHandler = useRef<(event: GlobalEventHandlersEventMap[K]) => void | undefined>(undefined);
 
   // Store latest handler in ref
   useEffect(() => {

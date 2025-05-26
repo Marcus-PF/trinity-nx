@@ -3,14 +3,15 @@
   "root": "libs/i18n",
   "sourceRoot": "libs/i18n/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "tsConfig": "libs/i18n/tsconfig.lib.json",
-        "outputPath": "dist/libs/i18n"
+        "main": "libs/i18n/src/index.ts",
+        "outputPath": "dist/libs/i18n",
+        "tsConfig": "libs/i18n/tsconfig.lib.json"
       }
     }
-  }
+  },
+  "tags": ["i18n", "shared", "react"]
 }

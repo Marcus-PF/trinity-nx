@@ -1,0 +1,8 @@
+{
+  "name": "@trinity/locales",
+  "root": "libs/locales",
+  "sourceRoot": "libs/locales/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["locales", "i18n", "static"]
+}

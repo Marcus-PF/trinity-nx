@@ -7,7 +7,7 @@
  */
 
 import { useContext } from 'react';
-import { AuthContext, AuthContextValue } from '@trinity/auth';
+import { AuthContext, AuthContextValue } from '../context/AuthProvider';
 
 /**
  * Hook to access authentication state and methods.

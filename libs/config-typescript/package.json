@@ -2,6 +2,7 @@
   "name": "@trinity/config-typescript",
   "version": "0.0.1",
   "private": true,
+  "main": "./base.json",
   "sideEffects": false,
   "exports": {
     "./base.json": "./base.json",

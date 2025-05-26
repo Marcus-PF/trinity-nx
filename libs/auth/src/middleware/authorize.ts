@@ -7,7 +7,7 @@
  */
 
 import type { Request, Response, NextFunction } from 'express';
-import type { JWTPayload } from '@trinity/auth';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Middleware to restrict access to specific user roles.
@@ -35,3 +35,4 @@ export function authorize(
     next();
   };
 }
+ 

@@ -9,8 +9,8 @@
 
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
-import { signJwt } from '@trinity/auth';
-import type { JWTPayload } from '@trinity/auth';
+import { signJwt } from '../strategies/jwtStrategy';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Zod schema for validating login credentials.

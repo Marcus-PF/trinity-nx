@@ -1,20 +1,8 @@
 {
   "name": "@trinity/config-prettier",
-  "version": "1.0.0",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "dependencies": {
-    "prettier": "^3.0.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "nx": {
-    "tags": ["config", "prettier"]
-  }
+  "root": "libs/config-prettier",
+  "sourceRoot": "libs/config-prettier",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["config", "prettier"]
 }

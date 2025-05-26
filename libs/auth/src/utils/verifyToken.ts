@@ -7,8 +7,10 @@
  */
 
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET, isTokenBlacklisted, AuthError } from '@trinity/auth';
-import type { JWTPayload } from '@trinity/auth';
+import { JWT_SECRET } from '../config/env';
+import { isTokenBlacklisted } from '../utils/blacklist';
+import { AuthError } from '../errors/AuthError';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Verifies the validity of a JWT access token.

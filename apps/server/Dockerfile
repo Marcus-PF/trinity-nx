@@ -14,7 +14,7 @@ WORKDIR /app
 RUN addgroup --system @trinity/server && \
           adduser --system -G @trinity/server @trinity/server
 
-COPY apps/server/dist @trinity/server/
+COPY dist/apps/server @trinity/server/
 RUN chown -R @trinity/server:@trinity/server .
 
 # You can remove this install step if you build with `--bundle` option.

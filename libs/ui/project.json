@@ -3,14 +3,27 @@
   "root": "libs/ui",
   "sourceRoot": "libs/ui/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "tsConfig": "libs/ui/tsconfig.lib.json",
-        "outputPath": "dist/libs/ui"
+        "main": "libs/ui/src/index.ts",
+        "outputPath": "dist/libs/ui",
+        "tsConfig": "libs/ui/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint src --ext .ts,.tsx"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "prettier --write \"src/**/*.{ts,tsx,css,json,md}\""
       }
     }
-  }
+  },
+  "tags": ["ui", "components", "shared", "react"]
 }

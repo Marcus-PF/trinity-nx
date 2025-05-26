@@ -1,15 +1,8 @@
 {
   "name": "@trinity/config-typescript",
-  "tags": [],
-  "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "options": {
-        "outputPath": "@trinity/config-typescript"
-      }
-    },
-    "devDependencies": {
-    "@nx/js": "21.1.2"
-   }
-  }
+  "root": "libs/config-typescript",
+  "sourceRoot": "libs/config-typescript",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["config", "typescript"]
 }

@@ -3,14 +3,15 @@
   "root": "libs/auth",
   "sourceRoot": "libs/auth/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "tsConfig": "libs/auth/tsconfig.lib.json",
-        "outputPath": "@trinity/auth"
+        "main": "libs/auth/src/index.ts",
+        "outputPath": "dist/libs/auth",
+        "tsConfig": "libs/auth/tsconfig.lib.json"
       }
     }
-  }
+  },
+  "tags": ["auth", "shared"]
 }

@@ -1,8 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google"
-import "@trinity/ui/globals.css"
+import "./globals.css"
 import { Providers } from "../components/providers"
-import { MainNav } from "../components/navigation/MainNav"
-import { MobileNav } from "../components/navigation/MobileNav"
+import { Navbar } from "../components/navigation/Navbar"
 
 const fontSans = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
@@ -12,12 +11,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}>
+      <body className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
-          <header className="border-b px-4 py-3 flex items-center justify-between">
-            <MainNav />
-            <MobileNav />
-          </header>
+          <Navbar />
           <main>{children}</main>
         </Providers>
       </body>

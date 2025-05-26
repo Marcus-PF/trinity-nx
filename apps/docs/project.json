@@ -3,22 +3,29 @@
   "root": "apps/docs",
   "sourceRoot": "apps/docs/src",
   "projectType": "application",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/next:build",
       "options": {
         "outputPath": "dist/apps/docs",
-        "rootDir": "apps/docs",
-        "srcDir": "apps/docs/src",
-        "tsConfig": "apps/docs/tsconfig.app.json"
+        "tsConfig": "apps/docs/tsconfig.app.json",
+        "nextConfig": "apps/docs/next.config.mjs"
       }
     },
     "serve": {
-      "executor": "@nx/next:dev-server",
+      "executor": "@nx/next:server",
       "options": {
         "buildTarget": "@trinity/docs:build"
       }
+    },
+    "test": {
+      "executor": "@nx/vite:vitest",
+      "options": {
+        "passWithNoTests": true,
+        "reporters": ["default"],
+        "coverage": false
+      }
     }
-  }
+  },
+  "tags": ["docs", "frontend"]
 }

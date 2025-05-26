@@ -4,18 +4,19 @@
     "baseUrl": ".",
     "composite": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "../../dist/libs/utils",
     "rootDir": "src",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/libs/utils/tsconfig.lib.tsbuildinfo",
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
   "include": ["src/**/*"],
   "exclude": [
-    "**/*.test.*",
-    "**/*.spec.*",
-    "dist",
-    "vite.config.*",
-    "vitest.config.*"
+    "../../dist"
+  ],
+  "references": [
+    {
+      "path": "../types/tsconfig.lib.json"
+    }
   ]
 }

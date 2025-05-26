@@ -1,11 +1,32 @@
-/** @type {import('next').NextConfig} */
-import { composePlugins, withNx } from '@nx/next';
+import { fileURLToPath } from 'url'
+import path from 'path'
+import { composePlugins, withNx } from '@nx/next'
+import withMDX from '@next/mdx'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const withMdxSupport = withMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
 
 const nextConfig = {
+  // Allows MDX and TSX/JSX
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+
   transpilePackages: ['@trinity/ui'],
   nx: {},
-};
+  webpack: (config) => {
+    config.resolve.alias['@trinity/ui'] = path.resolve(
+      __dirname,
+      '../../libs/ui/src'
+    )
+    return config
+  },
+}
 
-const plugins = [withNx];
-
-export default composePlugins(...plugins)(nextConfig);
+export default composePlugins(withNx, withMdxSupport)(nextConfig)

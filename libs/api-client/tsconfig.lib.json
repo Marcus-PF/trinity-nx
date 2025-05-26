@@ -3,12 +3,12 @@
   "compilerOptions": {
     "composite": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "../../dist/libs/api-client",
     "rootDir": "src",
     "baseUrl": ".",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/libs/api-client/tsconfig.lib.tsbuildinfo",
     "types": ["node"]
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "**/*.test.*", "**/*.spec.*"]
+  "exclude": ["../../dist", "**/*.test.*", "**/*.spec.*"]
 }

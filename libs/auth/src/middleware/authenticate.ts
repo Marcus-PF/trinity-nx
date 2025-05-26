@@ -8,14 +8,15 @@
  */
 
 import type { Request, Response, NextFunction } from 'express';
-import { AuthError, verifyToken } from '@trinity/auth';
+import { AuthError } from '../errors/AuthError';
+import { verifyToken } from '../utils/verifyToken';
 import { log } from '@trinity/utils';
-import type { JWTPayload } from '@trinity/auth';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Augment the Express request object with a `user` property.
  */
-declare module 'express-serve-static-core' {
+declare module 'express' {
   interface Request {
     user?: JWTPayload;
   }
@@ -42,10 +43,11 @@ export function authenticate(req: Request, res: Response, next: NextFunction): v
     next();
   } catch (error) {
     if (error instanceof AuthError) {
-      return res.status(error.status).json({ message: error.message });
+      res.status(error.status).json({ message: error.message });
+      return;
     }
 
     log('error', '[AuthError]', error);
-    return res.status(500).json({ message: 'Internal authentication error' });
+    res.status(500).json({ message: 'Internal authentication error' });
   }
 }

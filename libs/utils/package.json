@@ -14,9 +14,6 @@
     },
     "./package.json": "./package.json"
   },
-  "scripts": {
-    "test": "vitest run"
-  },
   "dependencies": {
     "@trinity/config-prettier": "workspace:*",
     "@trinity/config-typescript": "workspace:*",
@@ -27,8 +24,11 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "vitest": "^3.1.4",
-    "typescript": "^5.8.3",
-    "@nx/js": "21.1.2"
+    "@nx/js": "21.1.2",
+    "@types/qrcode": "^1.5.5",
+    "@types/sanitize-html": "^2.16.0",
+    "@types/speakeasy": "^2.0.10",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.8.3"
   }
 }

@@ -3,14 +3,33 @@
   "root": "libs/types",
   "sourceRoot": "libs/types/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "tsConfig": "libs/types/tsconfig.lib.json",
-        "outputPath": "dist/libs/types"
+        "main": "libs/types/src/index.ts",
+        "outputPath": "dist/libs/types",
+        "tsConfig": "libs/types/tsconfig.lib.json"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint . --ext .ts"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "prettier --write \"**/*.{ts,json,md}\""
       }
     }
-  }
+  },
+  "tags": ["types", "shared"]
 }

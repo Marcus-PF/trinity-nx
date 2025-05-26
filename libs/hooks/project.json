@@ -1,15 +1,29 @@
 {
   "name": "@trinity/hooks",
-  "projectType": "library",
+  "root": "libs/hooks",
   "sourceRoot": "libs/hooks/src",
+  "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "tsConfig": "libs/hooks/tsconfig.lib.json",
-        "project": "libs/hooks/package.json"
+        "main": "libs/hooks/src/index.ts",
+        "outputPath": "dist/libs/hooks",
+        "tsConfig": "libs/hooks/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint src --ext .ts,.tsx"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "prettier --write \"src/**/*.{ts,tsx,json,md}\""
       }
     }
   },
-  "tags": []
+  "tags": ["hooks", "shared", "react"]
 }

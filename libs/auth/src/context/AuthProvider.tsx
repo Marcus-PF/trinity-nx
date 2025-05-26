@@ -1,6 +1,6 @@
 /**
  * ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
- * ┃       @trinity/auth – AuthProvider (React Context)   ┃
+ * ┃       @trinity/auth – AuthProvider (React Context)  ┃
  * ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
  * Provides authenticated user context to the app.
  * Handles login, logout, token persistence, and auto-init.
@@ -11,12 +11,15 @@ import React, {
   useContext,
   useEffect,
   useState,
-  useCallback
+  useCallback,
 } from 'react';
 
-import type { JWTPayload } from '@trinity/auth';
-import { decodeJwt } from '@trinity/auth';
-import { loginWithCredentials, type Credentials } from '@trinity/auth';
+import type { JWTPayload } from '../types/token';
+import { decodeJwt } from '../strategies/jwtStrategy';
+import {
+  loginWithCredentials,
+  type Credentials,
+} from '../strategies/localStrategy';
 
 /**
  * Structure of the auth context provided by AuthProvider.
@@ -36,7 +39,9 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
  * @param children - The wrapped subtree
  * @returns Auth context for the application
  */
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<JWTPayload | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -44,7 +49,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const token = await loginWithCredentials(credentials);
     localStorage.setItem('token', token);
 
-    const decoded = await decodeJwt(token);
+    const decoded = decodeJwt(token);
     setUser(decoded);
   }, []);
 
@@ -62,10 +67,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       return;
     }
 
-    decodeJwt(token)
-      .then(setUser)
-      .catch(() => logout())
-      .finally(() => setLoading(false));
+    try {
+      const decoded = decodeJwt(token);
+      setUser(decoded);
+    } catch {
+      logout();
+    } finally {
+      setLoading(false);
+    }
   }, [logout]);
 
   return (

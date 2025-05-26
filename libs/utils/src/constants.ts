@@ -8,7 +8,7 @@
 /**
  * Whitelisted HTML tags for safe sanitization.
  */
-export const SAFE_HTML_TAGS = ['b', 'i', 'em', 'strong', 'a'] as const;
+export const SAFE_HTML_TAGS: string[] = ['b', 'i', 'em', 'strong', 'a'];
 
 /**
  * Regex pattern for validating slug strings (e.g., "event-title").

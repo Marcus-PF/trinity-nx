@@ -1,20 +1,21 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "composite": true,
     "outDir": "./out-tsc/vitest",
-    "jsx": "preserve",
-    "types": ["vitest", "vitest/globals", "node"],
-    "module": "esnext",
-    "moduleResolution": "bundler"
+    "types": ["vitest", "vitest/globals", "vite/client", "node"],
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx"
   },
   "include": [
-    "app/**/*.test.{ts,tsx,js,jsx}",
-    "app/**/*.spec.{ts,tsx,js,jsx}",
-    "app/**/*.d.ts"
+    "../../libs/**/*.{test,spec}.{ts,tsx,js,jsx}"
   ],
   "references": [
-    {
-      "path": "./tsconfig.json"
-    }
+    { "path": "../../libs/auth/tsconfig.lib.json" },
+    { "path": "../../libs/types/tsconfig.lib.json" },
+    { "path": "../../libs/utils/tsconfig.lib.json" },
+    { "path": "../../libs/hooks/tsconfig.lib.json" },
+    { "path": "../../libs/ui/tsconfig.lib.json" },
+    { "path": "../../libs/i18n/tsconfig.lib.json" }
   ]
 }

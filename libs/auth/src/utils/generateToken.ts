@@ -8,8 +8,9 @@
 
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
-import { JWT_SECRET, createAccessCookie, createRefreshCookie } from '@trinity/auth';
-import type { JWTPayload } from '@trinity/auth';
+import { JWT_SECRET } from '../config/env';
+import { createAccessCookie, createRefreshCookie } from '../utils/cookies';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Generates access and refresh JWTs + matching cookie headers.

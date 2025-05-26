@@ -29,25 +29,28 @@ export function verify2FA(req: Request, res: Response): void {
   };
 
   if (!userId || !token) {
-    return res.status(400).json({ message: 'Missing userId or token in request' });
+    res.status(400).json({ message: 'Missing userId or token in request' });
+    return;
   }
 
   const user = db.get(userId);
 
   if (!user || !user.twoFASecret) {
-    return res.status(400).json({ message: '2FA has not been set up for this user' });
+    res.status(400).json({ message: '2FA has not been set up for this user' });
+    return;
   }
 
   const isValid = verifyTOTP(token, user.twoFASecret);
 
   if (!isValid) {
-    return res.status(401).json({ message: 'Invalid 2FA token' });
+    res.status(401).json({ message: 'Invalid 2FA token' });
+    return;
   }
 
   db.set(userId, { ...user, twoFAEnabled: true });
 
   res.status(200).json({
     success: true,
-    twoFAEnabled: true
+    twoFAEnabled: true,
   });
 }

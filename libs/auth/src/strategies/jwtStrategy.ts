@@ -6,8 +6,9 @@
  * JWTs for user authentication and session handling.
  */
 
-import { generateTokens, verifyToken } from '@trinity/auth';
-import type { JWTPayload } from '@trinity/auth';
+import { verifyToken } from '../utils/verifyToken';
+import { generateTokens } from '../utils/generateToken';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Signs a JWT for a given user payload.

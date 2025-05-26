@@ -3,14 +3,27 @@
   "root": "libs/utils",
   "sourceRoot": "libs/utils/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "options": {
-        "tsConfig": "libs/utils/tsconfig.lib.json",
-        "outputPath": "dist/libs/utils"
+        "main": "libs/utils/src/index.ts",
+        "outputPath": "dist/libs/utils",
+        "tsConfig": "libs/utils/tsconfig.lib.json"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint src --ext .ts"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "prettier --write \"src/**/*.{ts,json,md}\""
       }
     }
-  }
+  },
+  "tags": ["utils", "shared"]
 }

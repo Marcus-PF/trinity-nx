@@ -14,9 +14,6 @@
     "./package.json": "./package.json"
   },
   "sideEffects": false,
-  "scripts": {
-    "test": "vitest run"
-  },
   "dependencies": {
     "@trinity/config-prettier": "workspace:*",
     "@trinity/config-typescript": "workspace:*",
@@ -25,7 +22,6 @@
   "devDependencies": {
     "@nx/js": "21.1.2",
     "@types/node": "^22.15.21",
-    "typescript": "^5.8.3",
-    "vitest": "^3.1.4"
+    "typescript": "^5.8.3"
   }
 }

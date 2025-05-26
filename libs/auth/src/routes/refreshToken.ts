@@ -9,8 +9,10 @@
 
 import type { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { readTokens, createAccessCookie, generateTokens, JWT_SECRET } from '@trinity/auth';
-import type { JWTPayload } from '@trinity/auth';
+import { readTokens, createAccessCookie } from '../utils/cookies';
+import { generateTokens } from '../utils/generateToken';
+import { JWT_SECRET } from '../config/env';
+import type { JWTPayload } from '../types/token';
 
 /**
  * Handles `/auth/refresh` route. Requires a valid refresh token.
@@ -21,18 +23,19 @@ export function refreshTokenHandler(req: Request, res: Response): void {
   const { refreshToken } = readTokens(req);
 
   if (!refreshToken) {
-    return res.status(401).json({ message: 'Missing refresh token' });
+    res.status(401).json({ message: 'Missing refresh token' });
+    return;
   }
 
   try {
     const decoded = jwt.verify(refreshToken, JWT_SECRET);
 
     if (typeof decoded !== 'object' || decoded === null) {
-      return res.status(403).json({ message: 'Invalid refresh token structure' });
+      res.status(403).json({ message: 'Invalid refresh token structure' });
+      return;
     }
 
     const payload = decoded as JWTPayload;
-
     const { accessToken, cookies } = generateTokens(payload);
 
     res.setHeader('Set-Cookie', cookies);
@@ -41,6 +44,6 @@ export function refreshTokenHandler(req: Request, res: Response): void {
       user: payload
     });
   } catch {
-    return res.status(403).json({ message: 'Invalid or expired refresh token' });
+    res.status(403).json({ message: 'Invalid or expired refresh token' });
   }
 }

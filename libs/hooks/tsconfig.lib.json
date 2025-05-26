@@ -3,16 +3,16 @@
   "compilerOptions": {
     "composite": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "../../dist/libs/hooks",
     "rootDir": "src",
     "baseUrl": ".",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/libs/hooks/tsconfig.lib.tsbuildinfo",
     "jsx": "react-jsx",
     "types": ["node"]
   },
   "include": ["src/**/*"],
   "exclude": [
-    "dist",
+    "../../dist",
     "**/*.test.*",
     "**/*.spec.*"
   ]
