@@ -1,0 +1,15 @@
+{
+  "name": "@trinity/hooks",
+  "projectType": "library",
+  "sourceRoot": "libs/hooks/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "tsConfig": "libs/hooks/tsconfig.lib.json",
+        "project": "libs/hooks/package.json"
+      }
+    }
+  },
+  "tags": []
+}

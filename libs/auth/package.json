@@ -18,6 +18,8 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@trinity/config-prettier": "workspace:*",
+    "@trinity/config-typescript": "workspace:*",
     "@trinity/types": "workspace:*",
     "@trinity/utils": "workspace:*",
     "bcryptjs": "^3.0.2",
@@ -32,6 +34,7 @@
     "react": "^19.1.0"
   },
   "devDependencies": {
+    "@nx/js": "21.1.2",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20.0.0",

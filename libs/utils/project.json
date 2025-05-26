@@ -1,0 +1,16 @@
+{
+  "name": "@trinity/utils",
+  "root": "libs/utils",
+  "sourceRoot": "libs/utils/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "tsConfig": "libs/utils/tsconfig.lib.json",
+        "outputPath": "dist/libs/utils"
+      }
+    }
+  }
+}

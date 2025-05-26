@@ -1,16 +1,16 @@
 {
   "name": "@trinity/types",
-  "projectType": "library",
-  "sourceRoot": "libs/types/src",
   "root": "libs/types",
+  "sourceRoot": "libs/types/src",
+  "projectType": "library",
+  "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": [],
+    "build": {
+      "executor": "@nx/js:tsc",
       "options": {
-        "lintFilePatterns": ["libs/types/**/*.ts"]
+        "tsConfig": "libs/types/tsconfig.lib.json",
+        "outputPath": "dist/libs/types"
       }
     }
-  },
-  "tags": ["scope:shared", "type:types"]
+  }
 }

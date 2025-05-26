@@ -20,7 +20,12 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"**/*.{ts,json,md}\""
   },
+  "dependencies": {
+    "@trinity/config-prettier": "workspace:*",
+    "@trinity/config-typescript": "workspace:*"
+  },
   "devDependencies": {
+    "@nx/js": "21.1.2",
     "@types/node": "^20.17.50",
     "@vitest/ui": "^3.0.0",
     "tsd": "^0.32.0",

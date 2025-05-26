@@ -46,3 +46,4 @@ export function useEventListener<K extends keyof GlobalEventHandlersEventMap>(
     return () => target.removeEventListener(type, wrapped, options);
   }, [type, target, options]);
 }
+ 

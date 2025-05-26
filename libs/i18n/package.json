@@ -15,6 +15,9 @@
   },
   "sideEffects": false,
   "dependencies": {
+    "@trinity/config-prettier": "workspace:*",
+    "@trinity/config-typescript": "workspace:*",
+    "@trinity/utils": "workspace:*",
     "@trinity/types": "workspace:*",
     "@trinity/locales": "workspace:*",
     "zod": "^3.22.4"
@@ -23,6 +26,7 @@
     "react": "^19.1.0"
   },
   "devDependencies": {
+    "@nx/js": "21.1.2",
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.0",
     "node-mocks-http": "^1.17.2",

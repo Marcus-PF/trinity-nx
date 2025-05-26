@@ -1,0 +1,16 @@
+{
+  "name": "@trinity/auth",
+  "root": "libs/auth",
+  "sourceRoot": "libs/auth/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "tsConfig": "libs/auth/tsconfig.lib.json",
+        "outputPath": "@trinity/auth"
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 packages:
   - apps/*
   - libs/*
-ignoredBuiltDependencies:
+onlyBuiltDependencies:
   - '@nestjs/core'
   - '@parcel/watcher'
-  - '@swc/core'
+  - '@tailwindcss/oxide'
   - cypress
   - esbuild
   - nx

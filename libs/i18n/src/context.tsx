@@ -16,7 +16,7 @@ import React, {
 } from 'react';
 
 import { DEFAULT_LOCALE, type Locale } from './config';
-import { t as translate } from './utils';
+import { t as translate } from './useTranslation';
 
 /**
  * Value provided by the I18nContext to consumers.

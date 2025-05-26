@@ -11,12 +11,15 @@
       "@trinity/locales/*": ["libs/locales/src/*"],
       "@trinity/ui/*": ["libs/ui/src/*"],
       "@trinity/api-client/*": ["libs/api-client/src/*"],
+
       "@trinity/config-eslint": ["libs/config-eslint/index.mjs"],
-      "@trinity/config-eslint/base": ["libs/config-eslint/base.mjs"],
-      "@trinity/config-eslint/next": ["libs/config-eslint/next.mjs"],
-      "@trinity/config-eslint/react-internal": ["libs/config-eslint/react-internal.mjs"],
+      "@trinity/config-eslint/*": ["libs/config-eslint/*"],
       "@trinity/config-prettier": ["libs/config-prettier/index.js"],
-      "@trinity/config-typescript/*": ["libs/config-typescript/*"]
+      "@trinity/config-typescript/*": ["libs/config-typescript/*"],
+
+      "@trinity/docs": ["apps/docs/src"],
+      "@trinity/forum-web": ["apps/forum-web/src"],
+      "@trinity/server": ["apps/server/src"]
     }
   }
 }

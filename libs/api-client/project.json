@@ -1,0 +1,22 @@
+{
+  "name": "@trinity/api-client",
+  "projectType": "library",
+  "sourceRoot": "libs/api-client/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "node_modules/@trinity/api-client",
+        "main": "libs/api-client/src/index.ts",
+        "tsConfig": "libs/api-client/tsconfig.lib.json"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vitest run"
+      }
+    }
+  },
+  "tags": []
+}

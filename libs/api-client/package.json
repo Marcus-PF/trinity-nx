@@ -18,9 +18,12 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@trinity/config-prettier": "workspace:*",
+    "@trinity/config-typescript": "workspace:*",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@nx/js": "21.1.2",
     "@types/node": "^22.15.21",
     "typescript": "^5.8.3",
     "vitest": "^3.1.4"

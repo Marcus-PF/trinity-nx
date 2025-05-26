@@ -18,6 +18,9 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@trinity/config-prettier": "workspace:*",
+    "@trinity/config-typescript": "workspace:*",
+    "@trinity/types": "workspace:*",
     "qrcode": "^1.5.4",
     "sanitize-html": "^2.17.0",
     "speakeasy": "^2.0.0",
@@ -25,6 +28,7 @@
   },
   "devDependencies": {
     "vitest": "^3.1.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@nx/js": "21.1.2"
   }
 }

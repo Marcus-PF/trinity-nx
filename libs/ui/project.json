@@ -1,0 +1,16 @@
+{
+  "name": "@trinity/ui",
+  "root": "libs/ui",
+  "sourceRoot": "libs/ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "tsConfig": "libs/ui/tsconfig.lib.json",
+        "outputPath": "dist/libs/ui"
+      }
+    }
+  }
+}
