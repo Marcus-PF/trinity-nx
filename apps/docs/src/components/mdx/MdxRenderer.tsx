@@ -1,9 +1,13 @@
 'use client'
 
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXContent } from 'mdx-js-runtime'
 import { MdxComponents } from './MdxComponents'
 
 export function MdxRenderer({ code }: { code: string }) {
-  const Component = useMDXComponent(code)
-  return <Component components={MdxComponents} />
+  return (
+    <MDXProvider components={MdxComponents}>
+      <MDXContent>{code}</MDXContent>
+    </MDXProvider>
+  )
 }

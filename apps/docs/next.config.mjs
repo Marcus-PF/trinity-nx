@@ -7,17 +7,14 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const withMdxSupport = withMDX({
-  extension: /\.mdx?$/,
+  extension: /\.(md|mdx)$/,
   options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    providerImportSource: '@mdx-js/react',
   },
 })
 
 const nextConfig = {
-  // Allows MDX and TSX/JSX
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
-
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx', 'md'],
   transpilePackages: ['@trinity/ui'],
   nx: {},
   webpack: (config) => {
