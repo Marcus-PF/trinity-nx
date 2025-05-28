@@ -4,7 +4,8 @@
   "compilerOptions": {
     "composite": true,
     "incremental": true,
-    "outDir": "../../dist/apps/docs",
+    "outDir": "../../dist/apps/forum-rotary",
+    "rootDir": "../../",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],

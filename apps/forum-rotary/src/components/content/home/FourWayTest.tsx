@@ -38,7 +38,6 @@ export function FourWayTest() {
   const [activeId, setActiveId] = useState<number | null>(null);
   const wheelRef = useRef<HTMLDivElement>(null);
 
-  // Wheel size based on current DOM width
   const wheelSize = wheelRef.current?.offsetWidth || 320;
 
   return (
@@ -47,10 +46,7 @@ export function FourWayTest() {
       aria-labelledby="fourway-heading"
     >
       <div className="relative z-10 max-w-6xl mx-auto text-center space-y-4 mb-12">
-        <h2
-          id="fourway-heading"
-          className="text-4xl md:text-5xl font-bold text-primary"
-        >
+        <h2 id="fourway-heading" className="text-4xl md:text-5xl font-bold text-primary">
           The Four-Way Test
         </h2>
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -59,9 +55,10 @@ export function FourWayTest() {
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10 max-w-7xl mx-auto">
-        {/* Left column: first two items */}
+        {/* Left column */}
         <div className="flex flex-col gap-6 w-full md:w-1/3">
-          {[items[0], items[1]].map((item) => {
+          {[items[0], items[1]].filter(Boolean).map((item) => {
+            if (!item) return null;
             const Icon = item.icon;
             const isActive = activeId === item.id;
             return (
@@ -115,8 +112,11 @@ export function FourWayTest() {
           </motion.div>
 
           {items.map((item, index) => {
+            if (!item) return null;
             const angleMap = [225, 135, 315, 45];
             const angle = angleMap[index];
+            if (angle === undefined) return null;
+
             const rad = (angle * Math.PI) / 180;
             const radius = wheelSize / 2;
             const x = Math.cos(rad) * radius;
@@ -151,9 +151,10 @@ export function FourWayTest() {
           })}
         </div>
 
-        {/* Right column: last two items */}
+        {/* Right column */}
         <div className="flex flex-col gap-6 w-full md:w-1/3">
-          {[items[2], items[3]].map((item) => {
+          {[items[2], items[3]].filter(Boolean).map((item) => {
+            if (!item) return null;
             const Icon = item.icon;
             const isActive = activeId === item.id;
             return (
@@ -188,7 +189,7 @@ export function FourWayTest() {
         </div>
       </div>
 
-      {/* Call to action */}
+      {/* CTA */}
       <div className="mt-8 text-center">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link href="/membership">
