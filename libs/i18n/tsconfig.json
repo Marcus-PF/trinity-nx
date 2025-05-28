@@ -1,10 +1,9 @@
+// libs/i18n/tsconfig.json
 {
+  "extends": "../../tsconfig.base.json",
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    }
-  ],
-  "extends": "../../tsconfig.base.json"
+    { "path": "./tsconfig.lib.json" }
+  ]
 }

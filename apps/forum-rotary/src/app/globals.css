@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* LIGHT THEME COLORS — Rotary Palette */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+
+  --card: #ffffff;
+  --card-foreground: #000000;
+
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+
+  --primary: #17458f; /* Rotary Royal Blue */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f7a81b; /* Rotary Gold */
+  --secondary-foreground: #17458f;
+
+  --muted: #f4f4f4;
+  --muted-foreground: #333333;
+
+  --accent: #0067c8; /* Azure */
+  --accent-foreground: #ffffff;
+
+  --destructive: #e02927; /* Cardinal */
+  --destructive-foreground: #ffffff;
+
+  --success: #009739; /* Grass (for positive states) */
+  --success-foreground: #ffffff;
+
+  --border: #d0cfcd;
+  --input: #d0cfcd;
+  --ring: #17458f;
+
+  --font-sans: "Open Sans", system-ui, sans-serif;
+  --radius: 0.5rem;
+}
+
+/* DARK THEME */
+.dark {
+  --background: #1c1c1e;
+  --foreground: #f1f1f1;
+
+  --card: #2a2a2d;
+  --card-foreground: #ffffff;
+
+  --popover: #2a2a2d;
+  --popover-foreground: #ffffff;
+
+  --primary: #6da6f7;
+  --primary-foreground: #1c1c1e;
+
+  --secondary: #fbcf6e;
+  --secondary-foreground: #1c1c1e;
+
+  --muted: #3a3a3c;
+  --muted-foreground: #e0e0e0;
+
+  --accent: #3399ff;
+  --accent-foreground: #1c1c1e;
+
+  --destructive: #ff5f56;
+  --destructive-foreground: #ffffff;
+
+  --success: #3ddc84;
+  --success-foreground: #1c1c1e;
+
+  --border: #3a3a3c;
+  --input: #3a3a3c;
+  --ring: #6da6f7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+
+  --font-sans: var(--font-sans);
+}
+
+/* TYPOGRAPHY & STRUCTURE */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  a {
+    text-decoration: none;
+    text-underline-offset: 3px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  h1 { color: var(--primary); }
+  h2 { color: var(--secondary); }
+  h3 { color: var(--accent); }
+
+  .section-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-wrapper {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+ 

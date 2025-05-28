@@ -1,6 +1,15 @@
+// tsconfig.json (located in monorepo root)
 {
   "extends": "./tsconfig.base.json",
   "files": [],
   "include": [],
-  "references": []
+  "references": [
+    { "path": "libs/api-client" },
+    { "path": "libs/auth" },
+    { "path": "libs/hooks" },
+    { "path": "libs/i18n" },
+    { "path": "libs/types" },
+    { "path": "libs/ui" },
+    { "path": "libs/utils" }
+  ]
 }

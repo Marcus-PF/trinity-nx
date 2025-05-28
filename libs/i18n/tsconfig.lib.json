@@ -1,26 +1,22 @@
+// libs/i18n/tsconfig.lib.json
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../libs/config-typescript/react-library.json",
   "compilerOptions": {
     "composite": true,
     "declaration": true,
+    "baseUrl": ".",
     "outDir": "../../dist/libs/i18n",
     "rootDir": "src",
-    "tsBuildInfoFile": "../../dist/libs/i18n/tsconfig.lib.tsbuildinfo",
-    "jsx": "react-jsx",
-    "types": ["node"]
+    "tsBuildInfoFile": "../../dist/libs/i18n/tsconfig.lib.tsbuildinfo"
   },
   "include": ["src/**/*"],
   "exclude": [
-    "dist",
+    "../../dist",
     "**/*.test.*",
     "**/*.spec.*"
   ],
   "references": [
-    {
-      "path": "../types/tsconfig.lib.json"
-    },
-    {
-      "path": "../utils/tsconfig.lib.json"
-    }
+    { "path": "../types/tsconfig.lib.json" },
+    { "path": "../utils/tsconfig.lib.json" }
   ]
 }

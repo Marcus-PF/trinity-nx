@@ -1,3 +1,4 @@
+// libs/api-client/tsconfig.json
 {
   "extends": "../../tsconfig.base.json",
   "files": [],

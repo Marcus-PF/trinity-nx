@@ -4,5 +4,5 @@
   "sourceRoot": "libs/locales/src",
   "projectType": "library",
   "targets": {},
-  "tags": ["locales", "i18n", "static"]
+  "tags": ["type:data", "scope:shared", "domain:i18n", "layer:locales"]
 }

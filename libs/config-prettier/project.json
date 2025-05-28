@@ -4,5 +4,5 @@
   "sourceRoot": "libs/config-prettier",
   "projectType": "library",
   "targets": {},
-  "tags": ["config", "prettier"]
+  "tags": ["type:config", "scope:tooling", "layer:formatting"]
 }

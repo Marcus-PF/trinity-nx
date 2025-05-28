@@ -1,14 +1,12 @@
+// libs/hooks/tsconfig.lib.json
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../libs/config-typescript/react-library.json",
   "compilerOptions": {
     "composite": true,
     "declaration": true,
     "outDir": "../../dist/libs/hooks",
     "rootDir": "src",
-    "baseUrl": ".",
-    "tsBuildInfoFile": "../../dist/libs/hooks/tsconfig.lib.tsbuildinfo",
-    "jsx": "react-jsx",
-    "types": ["node"]
+    "tsBuildInfoFile": "../../dist/libs/hooks/tsconfig.lib.tsbuildinfo"
   },
   "include": ["src/**/*"],
   "exclude": [

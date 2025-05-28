@@ -49,5 +49,5 @@
       }
     }
   },
-  "tags": ["server", "backend"]
+  "tags": ["type:app", "scope:platform", "domain:api", "layer:backend"]
 }

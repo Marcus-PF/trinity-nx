@@ -1,37 +1,29 @@
+// apps/server/tsconfig.app.json
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "ES2022",
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "rootDir": "src",
     "outDir": "../../dist/apps/server",
     "composite": true,
     "types": ["node"],
-    "rootDir": "src",
     "tsBuildInfoFile": "../../dist/apps/server/tsconfig.app.tsbuildinfo",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "target": "es2021"
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"],
   "exclude": [
-    "out-tsc",
     "dist",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "eslint.config.js",
-    "eslint.config.cjs",
-    "eslint.config.mjs"
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "eslint.config.*"
   ],
   "references": [
-    {
-      "path": "../../libs/types/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/i18n/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/auth/tsconfig.lib.json"
-    },
-    {
-      "path": "../../libs/api-client/tsconfig.lib.json"
-    }
+    { "path": "../../libs/types/tsconfig.lib.json" },
+    { "path": "../../libs/i18n/tsconfig.lib.json" },
+    { "path": "../../libs/auth/tsconfig.lib.json" },
+    { "path": "../../libs/api-client/tsconfig.lib.json" }
   ]
 }

@@ -8,7 +8,6 @@
     "plugins": [{ "name": "next" }],
     "allowJs": true,
     "jsx": "preserve",
-    "noEmit": true,
     "types": ["node", "next"],
     "baseUrl": ".",
     "paths": {

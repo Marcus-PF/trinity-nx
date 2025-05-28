@@ -27,5 +27,5 @@
       }
     }
   },
-  "tags": ["docs", "frontend"]
+  "tags": ["type:app", "scope:shared", "domain:platform", "layer:docs"]
 }

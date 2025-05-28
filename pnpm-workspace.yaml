@@ -5,8 +5,10 @@ onlyBuiltDependencies:
   - '@nestjs/core'
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
+  - contentlayer
   - cypress
   - esbuild
   - nx
+  - protobufjs
   - sharp
   - unrs-resolver

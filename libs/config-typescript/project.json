@@ -4,5 +4,5 @@
   "sourceRoot": "libs/config-typescript",
   "projectType": "library",
   "targets": {},
-  "tags": ["config", "typescript"]
+  "tags": ["type:config", "scope:tooling", "layer:typescript"]
 }

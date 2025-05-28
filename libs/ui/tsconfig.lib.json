@@ -1,35 +1,28 @@
+// libs/ui/tsconfig.lib.json
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../libs/config-typescript/react-library.json",
   "compilerOptions": {
-    "outDir": "../../dist/libs/ui",
-    "types": ["node"],
-    "rootDir": "src",
+    "composite": true,
+    "declaration": true,
     "baseUrl": ".",
-    "jsx": "react-jsx",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "outDir": "../../dist/libs/ui",
+    "rootDir": "src",
     "tsBuildInfoFile": "../../dist/libs/ui/tsconfig.lib.tsbuildinfo"
   },
-  "exclude": [
-    "../../dist"],
+  "types": ["react", "react-dom"],
   "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx"
   ],
+  "exclude": [
+    "../../dist",
+    "**/*.test.*",
+    "**/*.spec.*"
+  ],
   "references": [
-    {
-      "path": "../utils/tsconfig.lib.json"
-    },
-    {
-      "path": "../types/tsconfig.lib.json"
-    },
-    {
-      "path": "../i18n/tsconfig.lib.json"
-    },
-    {
-      "path": "../hooks/tsconfig.lib.json"
-    }
+    { "path": "../utils/tsconfig.lib.json" },
+    { "path": "../types/tsconfig.lib.json" },
+    { "path": "../i18n/tsconfig.lib.json" },
+    { "path": "../hooks/tsconfig.lib.json" }
   ]
 }

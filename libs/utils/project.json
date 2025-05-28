@@ -25,5 +25,5 @@
       }
     }
   },
-  "tags": ["utils", "shared"]
+  "tags": ["type:lib", "scope:shared", "domain:core", "layer:utils"]
 }

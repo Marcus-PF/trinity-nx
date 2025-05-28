@@ -1,41 +1,20 @@
+// apps/docs/tsconfig.json
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "noEmit": true,
     "incremental": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@workspace/ui/*": [
-        "../../libs/ui/src/*"
-      ],
-      "@trinity/ui": ["../../libs/ui/src/index.ts"],
-      "@trinity/ui/*": ["../../libs/ui/src/*"]
-    },
+    "noEmit": true,
     "types": [
       "vitest",
       "vitest/globals",
       "node"
+    ],
+    "allowJs": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
     ]
   },
   "include": [
@@ -43,7 +22,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "next.config.mjs",
     "../../dist/apps/docs/.next/types/**/*.ts"
   ],
   "exclude": [

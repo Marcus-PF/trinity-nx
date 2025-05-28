@@ -19,5 +19,5 @@
       }
     }
   },
-  "tags": ["api", "shared"]
+  "tags": ["type:lib", "scope:shared", "domain:network", "layer:api"]
 }

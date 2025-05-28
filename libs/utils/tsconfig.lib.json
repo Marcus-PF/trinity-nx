@@ -1,22 +1,21 @@
+// libs/utils/tsconfig.lib.json
 {
   "extends": "../../libs/config-typescript/base.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "composite": true,
     "declaration": true,
+    "baseUrl": ".",
     "outDir": "../../dist/libs/utils",
     "rootDir": "src",
-    "tsBuildInfoFile": "../../dist/libs/utils/tsconfig.lib.tsbuildinfo",
-    "forceConsistentCasingInFileNames": true,
-    "types": ["node"]
+    "tsBuildInfoFile": "../../dist/libs/utils/tsconfig.lib.tsbuildinfo"
   },
   "include": ["src/**/*"],
   "exclude": [
-    "../../dist"
+    "../../dist",
+    "**/*.test.*",
+    "**/*.spec.*"
   ],
   "references": [
-    {
-      "path": "../types/tsconfig.lib.json"
-    }
+    { "path": "../types/tsconfig.lib.json" }
   ]
 }

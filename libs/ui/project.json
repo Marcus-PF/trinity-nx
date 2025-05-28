@@ -25,5 +25,5 @@
       }
     }
   },
-  "tags": ["ui", "components", "shared", "react"]
+  "tags": ["type:lib", "scope:shared", "domain:ui", "layer:components"]
 }
