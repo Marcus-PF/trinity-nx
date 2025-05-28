@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { Card, CardContent } from '@trinity/ui'
-import { motion } from 'framer-motion'
+import { Card, CardContent } from '@trinity/ui';
+import { motion } from 'framer-motion';
 
 export function MissionVision() {
   return (
@@ -10,7 +10,7 @@ export function MissionVision() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-background text-foreground px-6 py-20 md:py-28"
+      className="bg-background px-4 py-20 sm:px-6 md:px-8 md:py-28"
       aria-labelledby="mission-vision-heading"
     >
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
@@ -20,7 +20,7 @@ export function MissionVision() {
         >
           Our Mission & Vision
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
           The heart of our Rotary club lies in purpose-driven service and lasting impact.
         </p>
       </div>
@@ -63,5 +63,5 @@ export function MissionVision() {
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }

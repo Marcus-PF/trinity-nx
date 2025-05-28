@@ -11,20 +11,17 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo & Mission */}
         <div className="space-y-3">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex justify-start items-center gap-2">
             <Image
               src="/rotary-logo.svg"
               alt="Rotary Logo"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
+              width={325}
+              height={125}
+              className="h-25 w-auto"
               priority
             />
-            <span className="text-base font-semibold text-primary">
-              Portuguese Forum Rotary
-            </span>
           </Link>
-          <p className="text-sm leading-relaxed max-w-sm">
+          <p className="text-sm leading-relaxed max-w-sm text-left justify-start">
             We’re part of a global network creating positive change through service, compassion, and leadership.
           </p>
         </div>

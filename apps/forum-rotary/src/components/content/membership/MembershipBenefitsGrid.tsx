@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { Card, CardHeader, CardContent } from '@trinity/ui'
+import { BenefitCard } from './BenefitCard';
 
 const benefits = [
   {
@@ -19,9 +19,9 @@ const benefits = [
     title: 'Professional Development',
     description: 'Collaborate with professionals from diverse industries and backgrounds.',
   },
-]
+];
 
-export function MembershipBenefits() {
+export function MembershipBenefitsGrid() {
   return (
     <section
       className="bg-muted px-6 py-20"
@@ -40,20 +40,14 @@ export function MembershipBenefits() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        {benefits.map((item, index) => (
-          <Card
+        {benefits.map((benefit, index) => (
+          <BenefitCard
             key={index}
-            className="bg-background h-full shadow-sm border border-border hover:shadow-md transition-shadow"
-          >
-            <CardHeader className="text-xl font-semibold text-primary">
-              {item.title}
-            </CardHeader>
-            <CardContent className="text-base text-muted-foreground">
-              {item.description}
-            </CardContent>
-          </Card>
+            title={benefit.title}
+            description={benefit.description}
+          />
         ))}
       </div>
     </section>
-  )
+  );
 }

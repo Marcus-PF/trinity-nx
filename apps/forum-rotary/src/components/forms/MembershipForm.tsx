@@ -1,127 +1,90 @@
-'use client'
+'use client';
 
-import { useForm, ValidationError } from '@formspree/react'
-import { Input, Button, Textarea, Card, CardContent } from '@trinity/ui'
-import { CheckCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { useForm, ValidationError } from '@formspree/react';
+import { Input, Textarea, Button } from '@trinity/ui';
+import { FormSuccessMessage } from '../../components/content/membership/FormSuccessMessage';
 
-export default function MembershipForm() {
-  const [state, handleSubmit] = useForm('xovdypnp')
+export function RotaryMembershipForm() {
+  const [state, handleSubmit] = useForm('xovdypnp');
 
   if (state.succeeded) {
-    return (
-      <motion.div
-        className="bg-primary text-primary-foreground py-12 px-6 rounded-lg text-center shadow-md"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        role="status"
-        aria-live="polite"
-        aria-labelledby="membership-success"
-      >
-        <div className="max-w-md mx-auto space-y-3">
-          <CheckCircle className="w-10 h-10 text-secondary mx-auto" aria-hidden="true" />
-          <h2 id="membership-success" className="text-2xl font-semibold">
-            Thank You!
-          </h2>
-          <p className="text-sm text-primary-foreground/90">
-            Your application has been submitted. We’ll be in touch shortly.
-          </p>
-        </div>
-      </motion.div>
-    )
+    return <FormSuccessMessage />;
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 max-w-2xl mx-auto"
+      className="space-y-6 max-w-2xl mx-auto"
       aria-labelledby="membership-form-heading"
       aria-live="polite"
     >
-      <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+      <h3 id="membership-form-heading" className="sr-only">
+        Membership Application
+      </h3>
 
-      <div>
-        <Input
-          name="fullname"
-          type="text"
-          placeholder="Full Name"
-          aria-label="Full Name"
-          required
-        />
-        <ValidationError prefix="Full Name" field="fullname" errors={state.errors} />
-      </div>
+      {/* Honeypot */}
+      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
-      <div>
-        <Input
-          name="email"
-          type="email"
-          placeholder="Email Address"
-          aria-label="Email"
-          required
-        />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
-      </div>
+      {[
+        { name: 'fullname', placeholder: 'Full Name', label: 'Full Name', type: 'text' },
+        { name: 'email', placeholder: 'Email Address', label: 'Email', type: 'email' },
+        { name: 'phone', placeholder: 'Phone Number', label: 'Phone', type: 'tel' },
+        { name: 'occupation', placeholder: 'Occupation / Profession', label: 'Occupation', type: 'text' },
+      ].map((field) => (
+        <div key={field.name} className="space-y-1">
+          <Input
+            name={field.name}
+            type={field.type}
+            placeholder={field.placeholder}
+            aria-label={field.label}
+            required
+            className="w-full bg-card text-card-foreground border border-input rounded-md px-4 py-2 shadow-sm
+                       focus:outline-none focus:ring-2 focus:ring-secondary transition"
+          />
+          <ValidationError prefix={field.label} field={field.name} errors={state.errors} className="text-sm text-destructive" />
+        </div>
+      ))}
 
-      <div>
-        <Input
-          name="phone"
-          type="tel"
-          placeholder="Phone Number"
-          aria-label="Phone"
-          required
-        />
-        <ValidationError prefix="Phone" field="phone" errors={state.errors} />
-      </div>
-
-      <div>
-        <Input
-          name="occupation"
-          type="text"
-          placeholder="Occupation / Profession"
-          aria-label="Occupation"
-          required
-        />
-        <ValidationError prefix="Occupation" field="occupation" errors={state.errors} />
-      </div>
-
-      <div>
-        <Textarea
-          name="reason"
-          placeholder="Why would you like to join Rotary?"
-          aria-label="Reason for joining"
-          rows={5}
-          required
-        />
-        <ValidationError prefix="Reason" field="reason" errors={state.errors} />
-      </div>
-
-      <div>
-        <Textarea
-          name="skills"
-          placeholder="What skills or experience can you contribute?"
-          aria-label="Skills and experience"
-          rows={4}
-          required
-        />
-        <ValidationError prefix="Skills" field="skills" errors={state.errors} />
-      </div>
+      {[
+        { name: 'reason', placeholder: 'Why would you like to join Rotary?', label: 'Reason for joining', rows: 5 },
+        { name: 'skills', placeholder: 'What skills or experience can you contribute?', label: 'Skills and experience', rows: 4 },
+      ].map((field) => (
+        <div key={field.name} className="space-y-1">
+          <Textarea
+            name={field.name}
+            placeholder={field.placeholder}
+            aria-label={field.label}
+            rows={field.rows}
+            required
+            className="w-full bg-card text-card-foreground border border-input rounded-md px-4 py-2 shadow-sm
+                       focus:outline-none focus:ring-2 focus:ring-secondary transition"
+          />
+          <ValidationError prefix={field.label} field={field.name} errors={state.errors} className="text-sm text-destructive" />
+        </div>
+      ))}
 
       <div>
         <Button
           type="submit"
           disabled={state.submitting}
-          className="w-full sm:w-auto"
+          aria-busy={state.submitting}
+          className="w-full sm:w-auto bg-secondary text-secondary-foreground hover:bg-secondary/90 transition
+                     focus:outline-none focus:ring-2 focus:ring-secondary rounded-md px-6 py-3"
         >
           {state.submitting ? 'Submitting…' : 'Submit Application'}
         </Button>
       </div>
 
-      {state.errors &&
-        Object.entries(state.errors).map(([key, error]) => (
-          <p key={key} className="text-sm text-destructive" role="alert">
-            {error?.message}
-          </p>
-        ))}
+      {/* Handle errors correctly */}
+      {Array.isArray(state.errors) && (
+        <div className="space-y-1">
+          {state.errors.map((error: { message: string }, idx: number) => (
+            <p key={idx} className="text-sm text-destructive" role="alert">
+              {error.message}
+            </p>
+          ))}
+        </div>
+      )}
     </form>
-  )
+  );
 }

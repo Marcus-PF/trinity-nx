@@ -1,15 +1,21 @@
-'use client'
+'use client';
+
+import { motion } from 'framer-motion';
 
 export function ContactIntro() {
   return (
-    <section
-      className="bg-background text-foreground px-6 py-20 text-center"
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-background px-6 py-20 md:py-28 text-center"
       aria-labelledby="contact-heading"
     >
       <div className="max-w-3xl mx-auto space-y-4">
         <h1
           id="contact-heading"
-          className="text-3xl md:text-4xl font-extrabold tracking-tight text-primary"
+          className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary"
         >
           Contact Us
         </h1>
@@ -18,6 +24,6 @@ export function ContactIntro() {
           drop us a message or reach out directly below.
         </p>
       </div>
-    </section>
-  )
+    </motion.section>
+  );
 }

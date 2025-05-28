@@ -1,87 +1,80 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import {
-  Button,
-} from '@trinity/ui'
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Button } from '@trinity/ui';
 
 export function HeroSection() {
   return (
     <section
       aria-labelledby="club-heading"
-      className="relative bg-background text-foreground px-6 py-20 md:py-28 overflow-hidden"
+      className="relative bg-background text-foreground px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 overflow-hidden"
     >
-      <div className="max-w-8xl mx-auto relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 min-h-[250px]">
-        {/* Rotating favicon in center */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 80, ease: 'linear' }}
-          className="hidden md:block absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] opacity-90"
-          aria-hidden="true"
-        >
-          <div className="relative w-full h-full">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-8 min-h-[250px]">
+        {/* Left: Background gradient + transparent PNG */}
+        <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
+          {/* Gradient behind image */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary to-secondary" />
+
+          {/* Foreground image with transparency */}
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/rotary-favicon.svg"
-              alt="Rotary International Gear"
+              src="/images/portuguese-people-portugal-flag.png"
+              alt="Portuguese community with Portugal flag"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-contain"
+              priority
             />
           </div>
-        </motion.div>
-
-        {/* Left: Image with club name (h1) overlay */}
-        <div className="relative h-[200px] md:h-[500px] w-full">
-          <Image
-            src="/images/lisbon-portugal-ocean.jpg"
-            alt="Lisbon coastline with ocean cliffs"
-            fill
-            className="object-cover object-center rounded-xl shadow-md"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-black/50 to-black/20 mix-blend-multiply rounded-xl" />
-          <h1
-            id="club-heading"
-            className="relative text-center md:text-left top-10 md:top-1/4 md:left-6 text-white text-2xl md:text-6xl font-extrabold tracking-tight drop-shadow-md leading-snug"
-          >
-            Portuguese Forum<br />International Rotary<br />E-Club
-          </h1>
         </div>
 
-        {/* Right: Hero message and CTAs */}
-        {/* Adjusted padding on the right for md and larger screens */}
-        <div className="space-y-8 text-center md:text-right z-10 md:pl-10 md:pr-10"> {/* Added md:pr-10 */}
-          <h2
-            id="hero-title"
-            className="text-3xl md:text-5xl font-extrabold tracking-tight text-primary drop-shadow"
+        {/* Right: Messaging + CTAs */}
+        <div className="z-20 space-y-2 md:space-y-4 p-6 md:p-8 text-left">
+          <h1
+            id="club-heading"
+            className="text-2xl md:text-5xl font-extrabold text-primary"
           >
-            People of Action. <br className="hidden md:inline" />
-            United in Purpose.
+            Portuguese Forum International
+          </h1>
+          <h2
+            id="club-sub-heading"
+            className="text-lg md:text-4xl text-secondary"
+          >
+            Rotary E-Club
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:ml-auto md:mr-0 leading-relaxed">
-            The Portuguese Forum Rotary Club brings global values to local impact — building
-            communities, fostering leadership, and creating lasting change.
+          <h3 className="text-2xl md:text-4xl font-bold text-accent">
+            People of Action. United in Purpose.
+          </h3>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+            The Portuguese Forum Rotary E-Club connects global Rotarians with
+            Portugal’s vibrant communities. We drive meaningful change through
+            leadership and service.
           </p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 mt-4">
-            <Link href="/membership">
-              {/* Increased button size using Tailwind's 'size' or 'h' and 'w' classes if 'size' isn't available from @trinity/ui */}
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition px-6 py-3 text-lg"> {/* Added px-6 py-3 text-lg for visual size */}
-                Join the Movement
-              </Button>
-            </Link>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/membership">
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-secondary transition"
+                >
+                  Become a Member
+                </Button>
+              </Link>
+            </motion.div>
             <Link href="/about">
               <Button
                 variant="outline"
-                size="lg" // Increased button size
-                className="border-secondary text-secondary-foreground hover:bg-secondary/10 hover:text-secondary-foreground transition px-6 py-3 text-lg" // Added px-6 py-3 text-lg for visual size
+                size="lg"
+                className="border-primary text-primary hover:bg-primary/10 transition"
               >
-                Learn More
+                Our Impact
               </Button>
             </Link>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

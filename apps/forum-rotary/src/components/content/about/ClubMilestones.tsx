@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@trinity/ui'
-import { motion } from 'framer-motion'
+} from '@trinity/ui';
+import { motion } from 'framer-motion';
 
 const milestones = [
   {
@@ -33,7 +33,7 @@ const milestones = [
     description:
       'Developed and hosted workshops to upskill members and youth on leadership, digital tools, and ethical decision-making.',
   },
-]
+];
 
 export function ClubMilestones() {
   return (
@@ -42,7 +42,7 @@ export function ClubMilestones() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-background text-foreground px-6 py-20 md:py-28"
+      className="bg-background px-4 py-20 sm:px-6 md:px-8 md:py-28"
       aria-labelledby="milestones-heading"
     >
       <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
@@ -61,8 +61,13 @@ export function ClubMilestones() {
         <Accordion type="single" collapsible className="space-y-4">
           {milestones.map((item, index) => (
             <AccordionItem value={`item-${index}`} key={index}>
-              <AccordionTrigger className="text-left text-lg font-medium hover:underline transition text-primary">
-                <span className="mr-2 text-secondary font-semibold">{item.year}</span>
+              <AccordionTrigger
+                className="flex items-center text-left text-lg font-medium text-primary 
+                           hover:text-secondary hover:underline focus:outline-none focus:ring-2 focus:ring-secondary transition"
+              >
+                <span className="mr-2 text-secondary font-semibold">
+                  {item.year}
+                </span>
                 {item.title}
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
@@ -73,5 +78,5 @@ export function ClubMilestones() {
         </Accordion>
       </div>
     </motion.section>
-  )
+  );
 }

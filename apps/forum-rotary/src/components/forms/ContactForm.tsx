@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { useForm, ValidationError } from '@formspree/react'
-import { Input, Button, Textarea, Card, CardContent } from '@trinity/ui'
-import { CheckCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { useForm, ValidationError } from '@formspree/react';
+import { Input, Button, Textarea } from '@trinity/ui';
+import { CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm('mldbaonn')
+  const [state, handleSubmit] = useForm('mldbaonn');
 
   if (state.succeeded) {
     return (
       <motion.div
         className="bg-primary text-primary-foreground py-12 px-6 rounded-lg text-center shadow-md"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         role="status"
         aria-live="polite"
         aria-labelledby="contact-success"
@@ -28,13 +28,17 @@ export default function ContactForm() {
           </p>
         </div>
       </motion.div>
-    )
+    );
   }
 
   return (
-    <form
+    <motion.form
       onSubmit={handleSubmit}
-      className="space-y-5 max-w-xl"
+      className="space-y-5 max-w-xl mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
       aria-labelledby="contact-form-heading"
       aria-live="polite"
     >
@@ -49,8 +53,9 @@ export default function ContactForm() {
           placeholder="Your Full Name"
           required
           aria-label="Full Name"
+          className="border-border focus:ring-secondary"
         />
-        <ValidationError prefix="Name" field="fullname" errors={state.errors} />
+        <ValidationError prefix="Name" field="fullname" errors={state.errors} className="text-sm text-destructive mt-1" />
       </div>
 
       <div>
@@ -61,8 +66,9 @@ export default function ContactForm() {
           placeholder="Your Email Address"
           required
           aria-label="Email"
+          className="border-border focus:ring-secondary"
         />
-        <ValidationError prefix="Email" field="user_email" errors={state.errors} />
+        <ValidationError prefix="Email" field="user_email" errors={state.errors} className="text-sm text-destructive mt-1" />
       </div>
 
       <div>
@@ -73,31 +79,32 @@ export default function ContactForm() {
           rows={6}
           required
           aria-label="Message"
+          className="border-border focus:ring-secondary"
         />
-        <ValidationError prefix="Message" field="message" errors={state.errors} />
+        <ValidationError prefix="Message" field="message" errors={state.errors} className="text-sm text-destructive mt-1" />
       </div>
 
       <div>
         <Button
           type="submit"
           disabled={state.submitting}
-          className="w-full sm:w-auto"
+          className="w-full sm:w-auto bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:ring-2 focus:ring-secondary"
         >
           {state.submitting ? 'Sending…' : 'Send Message'}
         </Button>
       </div>
 
-      {/* Optional error fallback */}
-      {state.errors &&
-        Object.entries(state.errors).map(([key, error]) => (
-          <p
-            key={key}
-            className="text-sm text-destructive mt-2"
-            role="alert"
-          >
-            {error?.message}
-          </p>
-        ))}
-    </form>
-  )
+      {/* General form error */}
+      {Array.isArray(state.errors) && state.errors.length > 0 && (
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-sm text-destructive mt-2"
+          role="alert"
+        >
+          There was an issue submitting your form. Please check your inputs and try again.
+        </motion.p>
+      )}
+    </motion.form>
+  );
 }
