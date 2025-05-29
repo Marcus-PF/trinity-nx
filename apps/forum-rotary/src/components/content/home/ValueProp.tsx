@@ -29,7 +29,7 @@ const items = [
     value: 'meaningful-service-takes-action',
     title: 'Meaningful Service Takes Action',
     description:
-      'Inspired by Rotary Internationals global initiatives, we focus our service efforts on areas that resonate with our members and directly benefit communities, particularly those with Portuguese ties.',
+      'Inspired by Rotary International’s global initiatives, we focus our service efforts on areas that resonate with our members and directly benefit communities, particularly those with Portuguese ties.',
   },
   {
     value: 'flexible-engagement-is-key',
@@ -50,7 +50,7 @@ export function ValueProp() {
       aria-labelledby="value-heading"
     >
       <div className="max-w-4xl mx-auto text-center mb-10 space-y-4">
-        <h2 id="value-heading" className="text-4xl md:text-5xl font-bold tracking-tight">
+        <h2 id="value-heading" className="text-4xl md:text-5xl font-bold tracking-tight text-primary-foreground">
           Why Join Rotary?
         </h2>
         <p className="text-base md:text-lg text-primary-foreground/90 max-w-2xl mx-auto">
@@ -75,22 +75,22 @@ export function ValueProp() {
                 aria-labelledby={`trigger-${index}`}
               >
                 <Card
-                  className="bg-card text-card-foreground border-primary/20 rounded-xl p-0
+                  className="bg-card text-card-foreground border border-border rounded-xl p-0
                              hover:shadow-md hover:-translate-y-1 transition-all duration-300
                              data-[state=open]:bg-secondary/10"
                 >
                   <AccordionTrigger
                     id={`trigger-${index}`}
-                    className="px-3 sm:px-4 py-3 text-lg md:text-xl text-primary
+                    className="px-3 sm:px-4 py-3 text-lg md:text-xl text-secondary
                                font-semibold hover:bg-secondary/10 focus:outline-none
-                               focus:bg-secondary/10 focus:ring-2 focus:ring-secondary
+                               focus:bg-secondary/10 focus-visible:ring-2 focus-visible:ring-ring
                                transition"
                   >
                     {item.title}
                   </AccordionTrigger>
                   <AccordionContent>
                     <CardContent className="px-3 sm:px-4 py-3 text-base md:text-lg text-muted-foreground leading-relaxed">
-                      <p dangerouslySetInnerHTML={{ __html: item.description }} />
+                      <p>{item.description}</p>
                     </CardContent>
                   </AccordionContent>
                 </Card>
@@ -104,9 +104,9 @@ export function ValueProp() {
             <Link href="/membership">
               <Button
                 size="lg"
-                className="bg-secondary text-secondary-foreground
-                           hover:bg-secondary/90 transition px-6 py-3
-                           focus:ring-2 focus:ring-secondary"
+                className="bg-secondary text-primary-foreground
+                           hover:bg-secondary/90 focus-visible:ring-2 focus-visible:ring-ring
+                           transition px-6 py-3"
                 data-event="value-cta-click"
               >
                 Join Us Today

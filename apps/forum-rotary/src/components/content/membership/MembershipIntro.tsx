@@ -53,7 +53,7 @@ export function MembershipIntro() {
           <p>
             Become a Rotarian and join a global network of passionate leaders, professionals, and changemakers.
           </p>
-          <p className="italic font-medium text-primary">
+          <p className="italic font-medium text-accent">
             Empowering lives through service and fellowship.
           </p>
         </motion.div>
@@ -63,7 +63,7 @@ export function MembershipIntro() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="w-24 h-px bg-border mx-auto mt-4 origin-left"
+          className="w-24 h-0.5 bg-secondary mx-auto mt-4 origin-left"
         />
       </div>
     </motion.section>

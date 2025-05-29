@@ -47,10 +47,7 @@ export function CtaGrid() {
       aria-labelledby="cta-heading"
     >
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
-        <h2
-          id="cta-heading"
-          className="text-4xl md:text-5xl font-bold tracking-tight"
-        >
+        <h2 id="cta-heading" className="text-4xl md:text-5xl text-primary-foreground font-bold tracking-tight">
           Ready to Take Action?
         </h2>
         <p className="text-base md:text-lg max-w-2xl mx-auto text-primary-foreground/90">
@@ -74,7 +71,7 @@ export function CtaGrid() {
                 <Card
                   role="region"
                   aria-labelledby={`cta-${index}`}
-                  className="bg-background text-foreground border-primary/20 shadow-sm
+                  className="bg-background text-foreground border border-border shadow-sm
                              hover:shadow-lg transition-all duration-300
                              group-hover:-translate-y-1 group-hover:scale-[1.03]
                              min-h-[200px] flex flex-col justify-between"
@@ -83,7 +80,7 @@ export function CtaGrid() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <div
-                          className="p-3 rounded-md bg-primary/90 text-primary-foreground"
+                          className="p-3 rounded-md bg-accent text-accent-foreground"
                           aria-label={`${item.title} icon`}
                         >
                           <Icon className="w-8 h-8" aria-hidden="true" />
@@ -99,7 +96,7 @@ export function CtaGrid() {
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent className="space-y-4 text-base px-4 pb-6 sm:px-6 flex-grow">
+                  <CardContent className="space-y-4 text-base px-4 pb-6 sm:px-6 flex-grow text-muted-foreground">
                     <p>{item.description}</p>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
@@ -108,10 +105,8 @@ export function CtaGrid() {
                       <Link href={item.href}>
                         <Button
                           size="lg"
-                          className="bg-secondary text-secondary-foreground
-                                     hover:bg-secondary/90 transition
-                                     focus:ring-2 focus:ring-secondary
-                                     px-4 py-2"
+                          variant="outline"
+                          className="text-secondary border-secondary hover:bg-secondary/10 focus-visible:ring-2 focus-visible:ring-ring transition"
                           data-event="cta-click"
                           data-cta={item.title}
                         >

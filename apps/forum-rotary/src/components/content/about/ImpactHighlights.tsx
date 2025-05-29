@@ -42,7 +42,7 @@ export function ImpactHighlights() {
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
         <h2
           id="impact-highlights-heading"
-          className="text-3xl md:text-4xl font-bold tracking-tight"
+          className="text-3xl md:text-4xl font-bold tracking-tight text-primary-foreground"
         >
           Our Work in Action
         </h2>
@@ -63,10 +63,10 @@ export function ImpactHighlights() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-card border-border shadow-sm">
-                <CardContent className="p-6 flex flex-col items-center text-center space-y-3">
-                  <Icon className="w-8 h-8 text-secondary" aria-hidden="true" />
-                  <h3 className="text-lg font-semibold text-primary">
+              <Card className="h-full bg-card border border-border shadow-sm hover:shadow-md transition">
+                <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
+                  <Icon className="w-10 h-10 text-accent" aria-hidden="true" />
+                  <h3 className="text-lg font-bold text-secondary">
                     {item.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">

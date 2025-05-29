@@ -1,6 +1,9 @@
 'use client';
 
-import { Card, CardContent, Button, Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from '@trinity/ui';
+import {
+  Card,
+  CardContent,
+} from '@trinity/ui';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { TeamDialog } from '../../content/about/TeamDialog';
@@ -16,10 +19,10 @@ const team = [
 In 2019, Manuel was awarded "Entrepreneur of the Year" by the ACIF (Associação de Comercial e Industrial do Funchal – Madeira), presented by President Miguel Albuquerque of Madeira, honoring a career that spans decades. He began in his father’s wood packaging business and went on to acquire Verulam Sawmills in 1984, eventually joining and remaining an active member of Sawmilling South Africa.
 
 His entrepreneurial ventures include:
-- **Founder**, Mannys Trusses (1987) – Timber construction solutions  
-- **Founder**, Mannys Hardware Supplies (1987) – General hardware and building materials  
-- **Member**, Institute for Timber Construction SA  
-- **Founder**, CMS (Community Monitoring Services, 1997) – Community-driven security network  
+- Founder, Mannys Trusses (1987) – Timber construction solutions  
+- Founder, Mannys Hardware Supplies (1987) – General hardware and building materials  
+- Member, Institute for Timber Construction SA  
+- Founder, CMS (Community Monitoring Services, 1997) – Community-driven security network  
 
 In 2016, Manuel received a crime prevention award from Emperors Palace for CMS’s work in Ekurhuleni, including the creation of rapid-response communication systems and foot patrol training.
 
@@ -27,14 +30,14 @@ He co-founded the Portuguese Forum of South Africa in 2001 alongside Father Carl
 
 Manuel assumed the role of President of the Rotary Portuguese Forum Universal in May 2025.
 
-**Notable Projects**:
+Notable Projects:
 - 2020: Social Solidarity Food Drive – 700+ tonnes of food collected during COVID-19 lockdown  
 - 2015: National Portuguese Community Showcase – celebrating leaders in business, culture, youth, and politics  
 - 2017–2023: Caravela Portuguese Festival – fundraising and cultural celebration  
 - 2022–2023: Madeira Fest – charity and cultural upliftment  
 - 2007: Tembisa Community Policing Forum Project  
 
-**Government Engagements**:
+Government Engagements:
 - 2002: Delegation visits to Madeira and Lisbon  
 - 2004: Meeting with former President Jacob Zuma  
 - 2012: Meeting with Deputy President Kgalema Motlanthe  
@@ -59,7 +62,7 @@ As National Project and Events Manager of the Portuguese Forum of South Africa, 
 
 In 2024, Paula spearheaded the creation of national Community Cluster Groups to empower local leaders—both men and women—through training and collaborative networking platforms aimed at community unity.
 
-**Recent leadership roles include**:
+Recent leadership roles include:
 - Vice-President, Johannesburg Chamber of Commerce (May 2025)  
 - Vice-President, Rotary Portuguese Forum Universal (May 2025)  
 - Council Board Member, South African Chamber of Commerce and Industry (joined November 2024)  
@@ -163,7 +166,7 @@ export function TeamGrid() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-muted px-6 py-20 md:py-28"
+      className="bg-background px-6 py-20 md:py-28"
       aria-labelledby="team-heading"
     >
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
@@ -187,9 +190,9 @@ export function TeamGrid() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <Card className="h-full bg-background border border-border shadow-sm">
-              <CardContent className="p-6 flex flex-col items-center text-center space-y-3">
-                <div className="w-48 h-48 relative rounded-full overflow-hidden border-2 border-secondary">
+            <Card className="h-full bg-card border border-border hover:border-accent shadow-sm hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
+                <div className="w-60 h-60 relative rounded-full overflow-hidden ring-4 ring-primary hover:ring-6 hover:ring-accent transition-all">
                   <Image
                     src={member.image}
                     alt={`Portrait of ${member.name}, ${member.role}`}
@@ -197,8 +200,12 @@ export function TeamGrid() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-md font-semibold text-primary">{member.name}</h3>
-                <p className="text-sm font-medium text-secondary">{member.role}</p>
+                <h3 className="text-xl md:text-2xl font-semibold text-primary">
+                  {member.name}
+                </h3>
+                <p className="text-sm md:text-base font-medium text-secondary uppercase tracking-wide">
+                  {member.role}
+                </p>
                 <p className="text-sm text-muted-foreground">{member.bio}</p>
 
                 <TeamDialog

@@ -39,13 +39,13 @@ export function ClubWelcomeSection() {
             </p>
           </div>
 
-          <Separator className="my-4 w-24 bg-primary/40 mx-auto md:mx-0" />
+          <Separator className="my-4 w-24 bg-border mx-auto md:mx-0" />
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/about">
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition px-6 py-3 focus:ring-2 focus:ring-secondary"
+                className="className='bg-secondary text-primary-foreground hover:bg-secondary/90 focus-visible:ring-2 focus-visible:ring-ring transition px-6 py-3"
               >
                 Learn More About Us
               </Button>
@@ -63,7 +63,7 @@ export function ClubWelcomeSection() {
         >
           <AspectRatio
             ratio={4 / 3}
-            className="rounded-xl shadow-md ring-1 ring-primary/20 overflow-hidden"
+            className="rounded-xl shadow-md ring-1 ring-border overflow-hidden"
           >
             <Image
               src="/images/portugal-flag-in-sky.webp"

@@ -5,7 +5,6 @@ import { Input } from '@trinity/ui';
 import { Button } from '@trinity/ui';
 import { CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export function NewsletterForm({ formId = 'xrbqrrao' }) {
@@ -57,7 +56,7 @@ export function NewsletterForm({ formId = 'xrbqrrao' }) {
         <div className="space-y-2">
           <h2
             id="newsletter-heading"
-            className="text-4xl md:text-5xl font-bold"
+            className="text-4xl md:text-5xl font-bold text-primary-foreground"
           >
             Stay Connected
           </h2>
@@ -82,24 +81,27 @@ export function NewsletterForm({ formId = 'xrbqrrao' }) {
             required
             placeholder="you@example.com"
             aria-label="Email address"
-            className="bg-card text-card-foreground w-full sm:w-80 md:w-96 border border-input shadow-sm focus-visible:ring-2 focus-visible:ring-secondary rounded-lg"
+            className="bg-card text-card-foreground w-full sm:w-80 md:w-96 border border-input shadow-sm
+                       focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
           />
           <Button
             type="submit"
             disabled={state.submitting}
             aria-busy={state.submitting}
-            className="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-lg px-6 py-3 focus-visible:ring-2 focus-visible:ring-secondary transition"
+            className="bg-secondary text-secondary-foreground hover:bg-secondary/90
+                       rounded-lg px-6 py-3 focus-visible:ring-2 focus-visible:ring-ring transition"
           >
             {state.submitting ? 'Signing Up…' : 'Sign Up'}
           </Button>
         </form>
 
-        <div className="text-sm text-destructive mt-2" role="alert">
-          {state.errors &&
-            Object.entries(state.errors).map(([key, error]) => (
+        {state.errors && (
+          <div className="text-sm text-destructive mt-2" role="alert">
+            {Object.entries(state.errors).map(([key, error]) => (
               <p key={key}>{error?.message}</p>
             ))}
-        </div>
+          </div>
+        )}
 
         <p className="text-sm text-primary-foreground/80">
           We respect your privacy. No spam —{' '}

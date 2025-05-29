@@ -7,7 +7,7 @@ import { Separator } from '@trinity/ui';
 
 export function Footer() {
   return (
-    <footer className="bg-muted text-muted-foreground border-t border-border px-6 py-16">
+    <footer className="bg-background text-muted-foreground border-t border-border px-6 py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Logo & Mission */}
         <div className="space-y-4">
@@ -23,7 +23,7 @@ export function Footer() {
             />
             {/* Dark mode logo */}
             <Image
-              src="/rotary-logo-dark.svg"
+              src="/portuguese-international-rotary-logo-dark.png"
               alt="Rotary Logo Dark"
               width={260}
               height={100}
@@ -35,7 +35,7 @@ export function Footer() {
 
         {/* Navigation Links */}
         <div className="space-y-4 text-center md:text-right py-1">
-          <h4 className="text-foreground text-sm font-semibold tracking-wide uppercase">Explore</h4>
+          <h4 className="text-secondary text-sm font-semibold tracking-wide uppercase">Explore</h4>
           <ul className="space-y-2 text-sm">
             <li><Link href="/about" className="hover:text-primary transition">About</Link></li>
             {/* Optional links: Uncomment when used */}
@@ -49,7 +49,7 @@ export function Footer() {
 
         {/* Contact & Social */}
         <div className="space-y-4 text-center md:text-right">
-          <h4 className="text-foreground text-sm font-semibold tracking-wide uppercase">Stay Connected</h4>
+          <h4 className="text-secondary text-sm font-semibold tracking-wide uppercase">Stay Connected</h4>
           <p className="text-sm leading-relaxed">
             Reach out, collaborate, or follow our journey.
           </p>

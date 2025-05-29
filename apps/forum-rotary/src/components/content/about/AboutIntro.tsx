@@ -10,10 +10,10 @@ export function AboutIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
-      className="relative bg-background px-6 py-24 md:py-32 text-center overflow-hidden"
+      className="relative bg-background text-foreground px-6 py-24 md:py-32 text-center overflow-hidden"
       aria-labelledby="about-heading"
     >
-      {/* Full-section Rotary watermark in center */}
+      {/* Rotary watermark background logo */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.1 }}
@@ -31,7 +31,7 @@ export function AboutIntro() {
         />
       </motion.div>
 
-      {/* Main content */}
+      {/* Foreground Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export function AboutIntro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="italic font-medium text-primary"
+            className="italic font-medium text-accent"
           >
             “Service Above Self.”
           </motion.p>
@@ -67,7 +67,7 @@ export function AboutIntro() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="w-24 h-px bg-border mx-auto mt-4 origin-left"
+          className="w-24 h-0.5 bg-secondary mx-auto mt-4 origin-left"
         />
       </motion.div>
     </motion.section>

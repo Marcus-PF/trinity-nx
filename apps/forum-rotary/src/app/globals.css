@@ -6,36 +6,36 @@
 
 /* LIGHT THEME COLORS — Rotary Palette */
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #ffffff; /* White */
+  --foreground: #000000; /* Black */
 
-  --card: #ffffff;
-  --card-foreground: #000000;
+  --card: #ffffff; /* White */
+  --card-foreground: #000000; /* Black */
 
-  --popover: #ffffff;
-  --popover-foreground: #000000;
+  --popover: #ffffff; /* White */
+  --popover-foreground: #000000; /* Black */
 
   --primary: #17458f; /* Rotary Royal Blue */
-  --primary-foreground: #ffffff;
+  --primary-foreground: #ffffff; /* White */
 
   --secondary: #f7a81b; /* Rotary Gold */
-  --secondary-foreground: #17458f;
+  --secondary-foreground: #17458f; /* Royal Blue */
 
-  --muted: #f4f4f4;
-  --muted-foreground: #333333;
+  --muted: #d6d1ca; /* Cloud */
+  --muted-foreground: #54565a; /* Charcoal */
 
   --accent: #0067c8; /* Azure */
-  --accent-foreground: #ffffff;
+  --accent-foreground: #ffffff; /* White */
 
   --destructive: #e02927; /* Cardinal */
-  --destructive-foreground: #ffffff;
+  --destructive-foreground: #ffffff; /* White */
 
-  --success: #009739; /* Grass (for positive states) */
-  --success-foreground: #ffffff;
+  --success: #009739; /* Grass */
+  --success-foreground: #ffffff; /* White */
 
-  --border: #d0cfcd;
-  --input: #d0cfcd;
-  --ring: #17458f;
+  --border: #b1b1b1; /* Smoke */
+  --input: #b1b1b1; /* Smoke */
+  --ring: #17458f; /* Rotary Royal Blue */
 
   --font-sans: "Open Sans", system-ui, sans-serif;
   --radius: 0.5rem;
@@ -43,37 +43,38 @@
 
 /* DARK THEME */
 .dark {
-  --background: #1c1c1e;
-  --foreground: #f1f1f1;
+  --background: #000000; /* Black */
+  --foreground: #ffffff; /* White */
 
-  --card: #2a2a2d;
-  --card-foreground: #ffffff;
+  --card: #000000; /* Charcoal - darkest brand-compliant neutral */
+  --card-foreground: #ffffff; /* White */
 
-  --popover: #2a2a2d;
-  --popover-foreground: #ffffff;
+  --popover: #000000; /* Charcoal */
+  --popover-foreground: #ffffff; /* White */
 
-  --primary: #6da6f7;
-  --primary-foreground: #1c1c1e;
+  --primary: #0067c8; /* Azure (brighter than Royal Blue for dark mode) */
+  --primary-foreground: #ffffff; /* White */
 
-  --secondary: #fbcf6e;
-  --secondary-foreground: #1c1c1e;
+  --secondary: #f7a81b; /* Rotary Gold */
+  --secondary-foreground: #000000; /* Black */
 
-  --muted: #3a3a3c;
-  --muted-foreground: #e0e0e0;
+  --muted: #54565a; /* Charcoal */
+  --muted-foreground: #d0cfcd; /* Silver */
 
-  --accent: #3399ff;
-  --accent-foreground: #1c1c1e;
+  --accent: #00a2e0; /* Sky Blue */
+  --accent-foreground: #000000; /* Black */
 
-  --destructive: #ff5f56;
-  --destructive-foreground: #ffffff;
+  --destructive: #e02927; /* Cardinal */
+  --destructive-foreground: #ffffff; /* White */
 
-  --success: #3ddc84;
-  --success-foreground: #1c1c1e;
+  --success: #009739; /* Grass */
+  --success-foreground: #ffffff; /* White */
 
-  --border: #3a3a3c;
-  --input: #3a3a3c;
-  --ring: #6da6f7;
+  --border: #898a8d; /* Pewter */
+  --input: #54565a; /* Charcoal */
+  --ring: #0067c8; /* Azure */
 }
+
 
 @theme inline {
   --color-background: var(--background);

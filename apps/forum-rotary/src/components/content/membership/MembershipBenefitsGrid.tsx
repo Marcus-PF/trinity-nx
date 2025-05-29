@@ -29,7 +29,7 @@ export function MembershipBenefitsGrid() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
-      className="bg-primary px-6 py-24 md:py-32 text-primary-foreground"
+      className="bg-primary text-primary-foreground px-6 py-24 md:py-32"
       aria-labelledby="membership-benefits-heading"
     >
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
@@ -39,7 +39,7 @@ export function MembershipBenefitsGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl md:text-4xl font-bold tracking-tight text-secondary"
+          className="text-3xl md:text-4xl font-bold tracking-tight text-primary-foreground"
         >
           Why Join Rotary?
         </motion.h2>
