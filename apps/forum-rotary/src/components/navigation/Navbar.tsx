@@ -1,7 +1,6 @@
 'use client';
 
 import { MainNav } from './MainNav';
-import { MobileNav } from './MobileNav';
 
 export function Navbar() {
   return (

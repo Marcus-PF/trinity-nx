@@ -18,11 +18,7 @@ export function RotaryMembershipForm() {
       aria-labelledby="membership-form-heading"
       aria-live="polite"
     >
-      <h3 id="membership-form-heading" className="sr-only">
-        Membership Application
-      </h3>
-
-      {/* Honeypot */}
+      <h3 id="membership-form-heading" className="sr-only">Membership Application</h3>
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
       {[
@@ -38,8 +34,7 @@ export function RotaryMembershipForm() {
             placeholder={field.placeholder}
             aria-label={field.label}
             required
-            className="w-full bg-card text-card-foreground border border-input rounded-md px-4 py-2 shadow-sm
-                       focus:outline-none focus:ring-2 focus:ring-secondary transition"
+            className="w-full bg-card text-card-foreground border border-input rounded-lg px-4 py-2 shadow-sm focus:ring-2 focus:ring-secondary transition"
           />
           <ValidationError prefix={field.label} field={field.name} errors={state.errors} className="text-sm text-destructive" />
         </div>
@@ -56,26 +51,21 @@ export function RotaryMembershipForm() {
             aria-label={field.label}
             rows={field.rows}
             required
-            className="w-full bg-card text-card-foreground border border-input rounded-md px-4 py-2 shadow-sm
-                       focus:outline-none focus:ring-2 focus:ring-secondary transition"
+            className="w-full bg-card text-card-foreground border border-input rounded-lg px-4 py-2 shadow-sm focus:ring-2 focus:ring-secondary transition"
           />
           <ValidationError prefix={field.label} field={field.name} errors={state.errors} className="text-sm text-destructive" />
         </div>
       ))}
 
-      <div>
-        <Button
-          type="submit"
-          disabled={state.submitting}
-          aria-busy={state.submitting}
-          className="w-full sm:w-auto bg-secondary text-secondary-foreground hover:bg-secondary/90 transition
-                     focus:outline-none focus:ring-2 focus:ring-secondary rounded-md px-6 py-3"
-        >
-          {state.submitting ? 'Submitting…' : 'Submit Application'}
-        </Button>
-      </div>
+      <Button
+        type="submit"
+        disabled={state.submitting}
+        aria-busy={state.submitting}
+        className="w-full sm:w-auto bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-lg focus:ring-2 focus:ring-secondary transition"
+      >
+        {state.submitting ? 'Submitting…' : 'Submit Application'}
+      </Button>
 
-      {/* Handle errors correctly */}
       {Array.isArray(state.errors) && (
         <div className="space-y-1">
           {state.errors.map((error: { message: string }, idx: number) => (

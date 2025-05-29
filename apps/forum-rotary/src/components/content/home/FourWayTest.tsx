@@ -15,15 +15,15 @@ const items = [
     icon: ShieldCheck,
   },
   {
-    id: 3,
-    question: 'Will it build GOODWILL and BETTER FRIENDSHIPS?',
-    description: 'We foster trust and kindness through community connections.',
-    icon: HeartHandshake,
-  },
-  {
     id: 2,
     question: 'Is it FAIR to all concerned?',
     description: 'We promote equity and fairness in our Portuguese communities.',
+    icon: HeartHandshake,
+  },
+  {
+    id: 3,
+    question: 'Will it build GOODWILL and BETTER FRIENDSHIPS?',
+    description: 'We foster trust and kindness through community connections.',
     icon: Scale,
   },
   {
@@ -81,7 +81,7 @@ export function FourWayTest() {
                     <Badge className="text-base font-bold px-3 py-1 bg-primary text-primary-foreground">
                       {item.id}
                     </Badge>
-                    <Icon className="w-10 h-10 text-primary" />
+                    <Icon className="w-10 h-10 text-secondary" />
                     <CardTitle className="text-xl md:text-2xl font-semibold text-primary">
                       {item.question}
                     </CardTitle>
@@ -177,7 +177,7 @@ export function FourWayTest() {
                     <Badge className="text-base font-bold px-3 py-1 bg-primary text-primary-foreground">
                       {item.id}
                     </Badge>
-                    <Icon className="w-10 h-10 text-primary" />
+                    <Icon className="w-10 h-10 text-secondary" />
                     <CardTitle className="text-xl md:text-2xl font-semibold text-primary">
                       {item.question}
                     </CardTitle>
@@ -187,21 +187,6 @@ export function FourWayTest() {
             );
           })}
         </div>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-8 text-center">
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link href="/membership">
-            <Button
-              size="lg"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/80 transition px-6 py-3 focus:ring-2 focus:ring-secondary"
-              data-event="fourway-cta-click"
-            >
-              Join Us Today
-            </Button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

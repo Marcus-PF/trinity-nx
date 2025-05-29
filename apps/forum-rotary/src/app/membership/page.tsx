@@ -24,7 +24,7 @@ const MembershipFormBlock = dynamic(() =>
 
 export default function MembershipPage() {
   return (
-    <main className="flex flex-col space-y-20" id="main-content">
+    <main className="flex flex-col space-y-8" id="main-content">
       <MembershipIntro />
       <MembershipBenefitsGrid />
       <MembershipStepAccordion />

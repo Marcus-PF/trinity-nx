@@ -7,13 +7,8 @@ const ContactIntro = dynamic(() =>
   { ssr: false }
 )
 
-const ContactDetails = dynamic(() =>
-  import('../../components/content/contact/ContactDetails').then(mod => mod.ContactDetails),
-  { ssr: false }
-)
-
-const ContactFormSection = dynamic(() =>
-  import('../../components/content/contact/ContactFormSection').then(mod => mod.ContactFormSection),
+const ContactSection = dynamic(() =>
+  import('../../components/content/contact/ContactSection').then(mod => mod.ContactSection),
   { ssr: false }
 )
 
@@ -24,10 +19,9 @@ const ContactFAQ = dynamic(() =>
 
 export default function ContactPage() {
   return (
-    <main className="flex flex-col space-y-20">
+    <main className="flex flex-col space-y-8">
       <ContactIntro />
-      <ContactDetails />
-      <ContactFormSection />
+      <ContactSection />
       <ContactFAQ />
     </main>
   )

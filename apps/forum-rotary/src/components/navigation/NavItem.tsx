@@ -19,11 +19,11 @@ export function NavItem({ href, label, className }: NavItemProps) {
       href={href}
       aria-current={isActive ? 'page' : undefined}
       className={cn(
-        'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors px-3 py-2 h-10',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFC107] focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        'relative inline-flex items-center justify-center px-3 py-2 h-10 text-sm font-medium rounded-md transition-colors',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
         isActive
-          ? 'text-[#FFC107] before:content-[""] before:absolute before:left-0 before:-bottom-1 before:h-[2px] before:w-full before:bg-[#FFC107]'
-          : 'text-[#003087] hover:text-[#FFC107] hover:bg-[#003087]/10',
+          ? 'text-secondary font-semibold after:absolute after:inset-x-3 after:bottom-1 after:h-[2px] after:bg-secondary'
+          : 'text-muted-foreground hover:text-secondary hover:bg-primary/10',
         className
       )}
     >

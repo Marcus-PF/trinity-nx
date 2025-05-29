@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { BenefitCard } from './BenefitCard';
 
 const benefits = [
@@ -23,31 +24,52 @@ const benefits = [
 
 export function MembershipBenefitsGrid() {
   return (
-    <section
-      className="bg-muted px-6 py-20"
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
+      className="bg-primary px-6 py-24 md:py-32 text-primary-foreground"
       aria-labelledby="membership-benefits-heading"
     >
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
-        <h2
+        <motion.h2
           id="membership-benefits-heading"
-          className="text-3xl md:text-4xl font-bold tracking-tight text-primary"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-3xl md:text-4xl font-bold tracking-tight text-secondary"
         >
           Why Join Rotary?
-        </h2>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed"
+        >
           Rotary connects people of action — leaders who are committed to service and fellowship.
-        </p>
+        </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {benefits.map((benefit, index) => (
-          <BenefitCard
+          <motion.div
             key={index}
-            title={benefit.title}
-            description={benefit.description}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+          >
+            <BenefitCard
+              title={benefit.title}
+              description={benefit.description}
+            />
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

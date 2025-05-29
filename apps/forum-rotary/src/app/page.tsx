@@ -7,8 +7,8 @@ const HeroSection = dynamic(() =>
   { ssr: false }
 )
 
-const MissionPreview = dynamic(() =>
-  import('../components/content/home/MissionPreview').then(mod => mod.MissionPreview),
+const ClubWelcomeSection = dynamic(() =>
+  import('../components/content/home/ClubWelcomeSection').then(mod => mod.ClubWelcomeSection),
   { ssr: false }
 )
 
@@ -35,10 +35,10 @@ const NewsletterForm = dynamic(() =>
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col space-y-20">
+    <main className="flex flex-col space-y-8">
       <HeroSection />
       <CtaGrid />
-      <MissionPreview />
+      <ClubWelcomeSection />
       <ValueProp />
       <FourWayTest />
       <NewsletterForm />

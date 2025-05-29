@@ -6,6 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
+  Card,
+  CardContent,
 } from '@trinity/ui';
 
 const faqs = [
@@ -59,19 +61,26 @@ export function ContactFAQ() {
       </div>
 
       <div className="max-w-3xl mx-auto">
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-1.5">
           {faqs.map((item, index) => (
-            <AccordionItem
-              key={index}
-              value={`faq-${index}`}
-              className="border border-border rounded-lg"
-            >
-              <AccordionTrigger className="text-left text-lg font-medium px-4 py-3 text-foreground hover:text-accent hover:underline">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="px-4 pb-4 text-base text-muted-foreground/80 leading-relaxed">
-                {item.answer}
-              </AccordionContent>
+            <AccordionItem key={index} value={`faq-${index}`} className="rounded-xl">
+              <Card
+                className="bg-card text-card-foreground border-border p-0 rounded-xl
+                           hover:shadow-md transition-all duration-300
+                           data-[state=open]:bg-secondary/10"
+              >
+                <AccordionTrigger
+                  className="text-left text-lg md:text-xl font-medium px-3 sm:px-4 py-3 text-primary
+                             hover:bg-secondary/10 focus:ring-2 focus:ring-secondary transition"
+                >
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <CardContent className="px-3 sm:px-4 py-3 text-base md:text-lg text-muted-foreground leading-relaxed">
+                    {item.answer}
+                  </CardContent>
+                </AccordionContent>
+              </Card>
             </AccordionItem>
           ))}
         </Accordion>

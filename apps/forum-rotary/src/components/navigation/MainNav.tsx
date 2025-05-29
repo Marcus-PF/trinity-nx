@@ -33,25 +33,28 @@ export function MainNav() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-[#003087] text-sm text-white py-2 px-4">
+      <div className="bg-primary text-primary-foreground text-sm py-2 px-4">
         <div className="container mx-auto flex justify-between items-center gap-2">
           <div className="flex items-center gap-1">
             <Mail className="w-4 h-4" />
             <a
               href="mailto:info@portugueserotaryeclub.org"
-              className="text-white hover:text-[#FFC107] transition-colors"
+              className="hover:text-secondary transition-colors"
             >
               info@portugueserotaryeclub.org
             </a>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <a href="#" aria-label="Facebook" className="hover:text-[#FFC107] transition-colors">
+            <a href="#" aria-label="Facebook" className="hover:text-secondary transition-colors">
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-[#FFC107] transition-colors">
+            <a href="#" aria-label="Instagram" className="hover:text-secondary transition-colors">
               <Instagram className="w-4 h-4" />
             </a>
-            <Link href="/login" className="flex items-center gap-1 hover:text-[#FFC107] transition-colors">
+            <Link
+              href="/login"
+              className="flex items-center gap-1 hover:text-secondary transition-colors"
+            >
               <LogIn className="w-4 h-4" /> Login
             </Link>
           </div>
@@ -59,47 +62,59 @@ export function MainNav() {
       </div>
 
       {/* Main Nav */}
-      <nav className="bg-white text-[#003087] shadow-sm">
+      <nav className="bg-background text-foreground shadow-sm border-b border-border">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          {/* Logo on the left */}
-          <Link href="/" className="flex items-center gap-2">
+         {/* Logo on the left */}
+          <Link href="/" className="flex items-center gap-2 relative">
+            {/* Light mode logo */}
             <Image
-              src="/rotary-logo.svg"
+              src="/portuguese-international-rotary-logo-original.png"
               alt="Rotary Logo"
-              width={250}
-              height={96}
+              width={335}
+              height={100}
               priority
-              className={`transition-all duration-500 ${
-                scrolled ? 'scale-100 opacity-100' : 'scale-95 opacity-90'
+              className={`block dark:hidden transition-all duration-500 ${
+                scrolled ? 'scale-100 opacity-100' : 'scale-95'
+              }`}
+            />
+            {/* Dark mode logo */}
+            <Image
+              src="/portuguese-international-rotary-logo-dark.png"
+              alt="Rotary Logo (Dark Mode)"
+              width={335}
+              height={100}
+              priority
+              className={`hidden dark:block transition-all duration-500 ${
+                scrolled ? 'scale-100 opacity-100' : 'scale-95'
               }`}
             />
           </Link>
 
-          {/* Right side: desktop nav + utilities, or mobile hamburger */}
+
+          {/* Desktop Nav */}
           <div className="flex items-center gap-4">
-            {/* Desktop menu & buttons */}
             <div className="hidden lg:flex items-center gap-4">
               <NavigationMenu>
                 <NavigationMenuList className="flex gap-2">
                   <NavItem href="/" label="Home" />
                   <NavItem href="/about" label="About" />
-                  {/* <NavItem href="/projects" label="Projects" />
-                  <NavItem href="/events" label="Events" /> */}
+                  {/* <NavItem href="/projects" label="Projects" /> */}
                   <NavItem href="/membership" label="Membership" />
                   <NavItem href="/contact" label="Contact" />
                 </NavigationMenuList>
               </NavigationMenu>
 
               <Link href="/membership">
-                <Button size="sm" variant="secondary" className="bg-[#FFC107] text-black hover:bg-[#FFB300]">
+                <Button size="sm" variant="secondary">
                   Join
                 </Button>
               </Link>
               <Link href="/donate">
-                <Button size="sm" className="bg-[#003087] text-white hover:bg-[#002A6E]">
+                <Button size="sm" variant="outline">
                   Donate
                 </Button>
               </Link>
+
               {mounted && (
                 <Toggle
                   size="sm"
@@ -107,9 +122,14 @@ export function MainNav() {
                   pressed={theme === 'dark'}
                   onPressedChange={pressed => setTheme(pressed ? 'dark' : 'light')}
                 >
-                  {theme === 'dark' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+                  {theme === 'dark' ? (
+                    <Moon className="w-4 h-4" />
+                  ) : (
+                    <Sun className="w-4 h-4" />
+                  )}
                 </Toggle>
               )}
+
               <Link href="/profile" aria-label="User Profile">
                 <Avatar>
                   <AvatarFallback>
@@ -119,7 +139,7 @@ export function MainNav() {
               </Link>
             </div>
 
-            {/* Mobile hamburger (only visible on small screens) */}
+            {/* Mobile Nav */}
             <div className="lg:hidden">
               <MobileNav />
             </div>

@@ -18,22 +18,19 @@ import {
 const ctas = [
   {
     title: 'About Us',
-    description:
-      'Discover how our E-Club serves Portugal and beyond with purpose.',
+    description: 'Discover how our E-Club serves Portugal and beyond with purpose.',
     href: '/about',
     icon: Info,
   },
   {
     title: 'Membership',
-    description:
-      'Join a global network of Rotarians making a difference in Portugal.',
+    description: 'Join a global network of Rotarians making a difference in Portugal.',
     href: '/membership',
     icon: UserPlus,
   },
   {
     title: 'Contact Us',
-    description:
-      'Reach out to collaborate or learn about our initiatives.',
+    description: 'Reach out to collaborate or learn about our initiatives.',
     href: '/contact',
     icon: Mail,
   },
@@ -41,7 +38,11 @@ const ctas = [
 
 export function CtaGrid() {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
       className="bg-primary text-primary-foreground px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20"
       aria-labelledby="cta-heading"
     >
@@ -66,7 +67,7 @@ export function CtaGrid() {
                 key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group motion-reduce:transform-none"
               >
@@ -129,6 +130,6 @@ export function CtaGrid() {
           })}
         </TooltipProvider>
       </div>
-    </section>
+    </motion.section>
   );
 }

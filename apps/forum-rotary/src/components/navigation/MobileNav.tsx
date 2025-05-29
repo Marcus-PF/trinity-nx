@@ -11,8 +11,6 @@ import { cn } from '@trinity/ui';
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  // { label: 'Projects', href: '/projects' },
-  // { label: 'Events', href: '/events' },
   { label: 'Membership', href: '/membership' },
   { label: 'Donate', href: '/donate' },
   { label: 'Contact', href: '/contact' },
@@ -22,28 +20,29 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // we only portal after mounting (so document is defined)
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // drawer + backdrop JSX
   const drawer = (
     <>
-      {/* backdrop */}
+      {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-[9998] bg-black/50"
+          className="fixed inset-0 z-[9998] bg-muted/70 backdrop-blur-sm transition-opacity"
           onClick={() => setIsOpen(false)}
+          aria-hidden="true"
         />
       )}
 
-      {/* full-height drawer */}
+      {/* Drawer */}
       <div
         className={cn(
-          'fixed inset-y-0 right-0 w-64 bg-background shadow-lg z-[9999] transform transition-transform',
+          'fixed inset-y-0 right-0 w-64 bg-background text-foreground shadow-lg z-[9999] transform transition-transform duration-300 ease-in-out',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
+        role="dialog"
+        aria-modal="true"
       >
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
           <h2 className="text-lg font-bold text-primary">Menu</h2>
@@ -52,7 +51,7 @@ export function MobileNav() {
             size="icon"
             aria-label="Close menu"
             onClick={() => setIsOpen(false)}
-            className="text-primary"
+            className="text-muted-foreground"
           >
             <X className="w-5 h-5" />
           </Button>
@@ -74,14 +73,14 @@ export function MobileNav() {
             <MobileLink
               href="/membership"
               onNavigate={() => setIsOpen(false)}
-              className="block w-full text-center bg-secondary text-secondary-foreground rounded-md px-3 py-2"
+              className="block w-full text-center bg-secondary text-secondary-foreground hover:bg-secondary/90 transition rounded-md px-3 py-2"
             >
               Join Rotary
             </MobileLink>
             <MobileLink
               href="/donate"
               onNavigate={() => setIsOpen(false)}
-              className="block w-full text-center bg-primary text-primary-foreground rounded-md px-3 py-2"
+              className="block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 transition rounded-md px-3 py-2"
             >
               Donate Now
             </MobileLink>
@@ -93,18 +92,16 @@ export function MobileNav() {
 
   return (
     <>
-      {/* Hamburger trigger */}
       <Button
         variant="ghost"
         size="icon"
-        className="md:hidden text-primary"
+        className="lg:hidden text-primary"
         aria-label="Open navigation menu"
         onClick={() => setIsOpen(true)}
       >
         <Menu className="w-6 h-6" />
       </Button>
 
-      {/* Portal the drawer under document.body */}
       {mounted && createPortal(drawer, document.body)}
     </>
   );
@@ -139,7 +136,7 @@ function MobileLink({
           'block text-base font-medium transition-colors',
           isActive
             ? 'bg-muted text-primary font-semibold'
-            : 'text-foreground hover:text-secondary'
+            : 'text-muted-foreground hover:text-secondary'
         )}
       >
         {children}

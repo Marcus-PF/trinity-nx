@@ -45,7 +45,7 @@ export function MembershipStepAccordion() {
       </div>
 
       <div className="max-w-2xl mx-auto">
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-1.5">
           {steps.map((step) => (
             <StepItem
               key={step.id}

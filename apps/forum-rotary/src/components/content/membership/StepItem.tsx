@@ -4,6 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
+  Card,
+  CardContent,
 } from '@trinity/ui';
 
 interface StepItemProps {
@@ -14,22 +16,27 @@ interface StepItemProps {
 
 export function StepItem({ value, title, description }: StepItemProps) {
   return (
-    <AccordionItem
-      value={value}
-      className="border border-border rounded-lg bg-card shadow-sm
-                 hover:shadow-md transition-all duration-300
-                 data-[state=open]:bg-secondary/10"
-    >
-      <AccordionTrigger
-        className="flex justify-between items-center px-4 sm:px-6 py-3
-                   text-lg font-medium text-primary
-                   hover:bg-secondary/10 focus:outline-none focus:bg-secondary/10 focus:ring-2 focus:ring-secondary transition"
+    <AccordionItem value={value} className="rounded-xl">
+      <Card
+        className="bg-card text-card-foreground border-border p-0 rounded-xl
+                   hover:shadow-md transition-all duration-300
+                   data-[state=open]:bg-secondary/10"
       >
-        {title}
-      </AccordionTrigger>
-      <AccordionContent className="px-4 sm:px-6 py-3 text-base text-muted-foreground leading-relaxed">
-        {description}
-      </AccordionContent>
+        <AccordionTrigger
+          className="px-3 sm:px-4 py-3 text-lg md:text-xl font-medium text-primary
+                     hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary
+                     transition"
+        >
+          {title}
+        </AccordionTrigger>
+        <AccordionContent>
+          <CardContent
+            className="px-3 sm:px-4 py-3 text-base md:text-lg text-muted-foreground leading-relaxed"
+          >
+            {description}
+          </CardContent>
+        </AccordionContent>
+      </Card>
     </AccordionItem>
   );
 }
