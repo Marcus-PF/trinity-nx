@@ -7,22 +7,22 @@ const steps = [
   {
     id: 'step-1',
     title: '1. Submit Your Interest',
-    description: 'Fill out the form to let us know you’re interested in joining the club.',
+    description: 'Let us know you’re ready to connect by filling out our quick online form.',
   },
   {
     id: 'step-2',
     title: '2. Meet & Greet',
-    description: 'A current member will reach out to connect, introduce you to the club, and answer questions.',
+    description: 'A member of our team will reach out to welcome you, share what we’re about, and answer your questions.',
   },
   {
     id: 'step-3',
-    title: '3. Attend an Event',
-    description: 'You’ll be invited to attend a meeting or service event to see us in action.',
+    title: '3. Join a Session or Project',
+    description: 'Get a feel for the community by attending a virtual meeting or participating in a service event.',
   },
   {
     id: 'step-4',
-    title: '4. Complete Membership Onboarding',
-    description: 'Finalize your application, submit any forms, and begin your journey with Rotary.',
+    title: '4. Finalize Your Membership',
+    description: 'Complete your registration, meet the onboarding requirements, and officially begin your Rotary journey.',
   },
 ];
 
@@ -40,7 +40,7 @@ export function MembershipStepAccordion() {
           How to Join
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Becoming a member is simple. Here’s how you can get involved:
+          Becoming a member is simple and meaningful. Here’s how to start your Rotary journey with us:
         </p>
       </div>
 

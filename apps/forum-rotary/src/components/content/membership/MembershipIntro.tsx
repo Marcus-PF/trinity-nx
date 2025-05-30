@@ -51,10 +51,10 @@ export function MembershipIntro() {
           className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto space-y-4"
         >
           <p>
-            Become a Rotarian and join a global network of passionate leaders, professionals, and changemakers.
+            Join a vibrant, digitally connected Rotary community — where heritage meets service, and individuals unite to lead, inspire, and create change across borders.
           </p>
           <p className="italic font-medium text-accent">
-            Empowering lives through service and fellowship.
+            Empowering lives through purpose, connection, and global fellowship.
           </p>
         </motion.div>
 

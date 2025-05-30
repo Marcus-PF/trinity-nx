@@ -51,10 +51,10 @@ export function ContactIntro() {
           className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto space-y-4"
         >
           <p>
-            We’d love to connect! Whether you’re interested in joining, collaborating, or just want to say hello.
+            We’d love to hear from you — whether you’re interested in membership, collaboration, or simply learning more about our work.
           </p>
-          <p className="italic font-medium text-primary">
-            Your message matters — we’re ready to listen.
+          <p className="italic font-medium text-accent">
+            Every connection starts with a conversation. Let’s talk.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export function ContactIntro() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="w-24 h-px bg-border mx-auto mt-4 origin-left"
+          className="w-24 h-0.5 bg-secondary mx-auto mt-4 origin-left"
         />
       </div>
     </motion.section>

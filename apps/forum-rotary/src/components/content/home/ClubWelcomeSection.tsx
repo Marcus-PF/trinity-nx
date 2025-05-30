@@ -29,13 +29,13 @@ export function ClubWelcomeSection() {
 
           <div className="text-base md:text-lg text-muted-foreground leading-relaxed space-y-4">
             <p>
-              We’re a newly chartered Rotary E-Club rooted in the spirit of the Portuguese Forum of South Africa.
+              We are a dynamic new Rotary E-Club, proudly inspired by the legacy of the Portuguese Forum of South Africa.
             </p>
             <p>
-              Our members span the globe, united by heritage, friendship, and the Rotary principle of <strong>“Service Above Self.”</strong>
+              Our members represent a global community—connected through Portuguese heritage, shared values, and a deep commitment to <strong>Service Above Self</strong>.
             </p>
             <p>
-              As an e-club, we offer flexibility, connection, and impact — wherever you are in the world.
+              As a fully virtual club, we embrace flexibility, foster cross-border friendships, and drive meaningful change from anywhere in the world.
             </p>
           </div>
 

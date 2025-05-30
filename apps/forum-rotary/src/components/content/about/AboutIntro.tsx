@@ -48,8 +48,11 @@ export function AboutIntro() {
 
         <div className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto space-y-4">
           <p>
-            The Portuguese Forum Rotary Club is a dynamic community of leaders,
-            visionaries, and changemakers.
+            The Portuguese International Rotary E-Club is a modern Rotary experience — digitally connected, culturally rooted, and globally minded.
+            We bring together individuals of Portuguese descent and those inspired by our values to serve communities across borders.
+          </p>
+          <p>
+            With flexible, virtual meetings and a focus on impact, our club is a bridge between tradition and innovation — where service meets storytelling, leadership, and legacy.
           </p>
           <motion.p
             initial={{ opacity: 0, y: 10 }}

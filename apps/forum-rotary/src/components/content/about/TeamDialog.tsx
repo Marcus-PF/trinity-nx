@@ -26,7 +26,7 @@ export function TeamDialog({ name, role, fullBio }: TeamDialogProps) {
         <Button
           variant="outline"
           size="sm"
-          className="mt-2 border-border text-primary hover:bg-primary/10"
+          className="mt-2 border-border text-primary hover:bg-primary/10 hover:text-secondary"
         >
           Read More
         </Button>
@@ -48,7 +48,7 @@ export function TeamDialog({ name, role, fullBio }: TeamDialogProps) {
           <DialogClose asChild>
             <Button
               variant="outline"
-              className="bg-primary text-primary-foreground hover:bg-primary/90
+              className="bg-secondary text-primary-foreground hover:bg-primary/90 hover:text-secondary
                          focus-visible:outline-none focus-visible:ring-2
                          focus-visible:ring-secondary focus-visible:ring-offset-2"
             >

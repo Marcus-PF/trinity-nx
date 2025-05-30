@@ -8,24 +8,22 @@ const highlights = [
   {
     title: 'Youth Mentorship',
     icon: Users,
-    description: 'Coaching, skills-building, and access for high school learners.',
+    description: 'Guiding tomorrow’s leaders through coaching, skills training, and personal development.',
   },
   {
     title: 'Food Security Drives',
     icon: Utensils,
-    description: 'Partnered efforts to supply essentials to families in need.',
+    description: 'Mobilizing resources to ensure families in need receive vital food and daily essentials.',
   },
   {
     title: 'Leadership Workshops',
     icon: HeartHandshake,
-    description:
-      'Empowering members and youth through guided learning and Rotary values.',
+    description: 'Fostering empathy, collaboration, and confidence through values-based learning experiences.',
   },
   {
     title: 'Education Outreach',
     icon: GraduationCap,
-    description:
-      'School supply drives, tutoring support, and facility upgrades.',
+    description: 'Supporting schools with supplies, tutoring, and facility improvements for lasting impact.',
   },
 ];
 
@@ -47,8 +45,7 @@ export function ImpactHighlights() {
           Our Work in Action
         </h2>
         <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-          Real-world initiatives led by real people. Here’s how we’re building a
-          better tomorrow.
+          From food relief to youth development, our members drive meaningful change where it’s needed most.
         </p>
       </div>
 

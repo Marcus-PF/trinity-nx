@@ -50,17 +50,17 @@ export function HeroSection() {
           className="z-20 space-y-3 md:space-y-5 p-6 md:p-8 text-center md:text-left"
         >
           <h1 id="club-heading" className="text-2xl md:text-5xl font-extrabold text-primary">
-            Portuguese International
+            Portuguese International <br /> Rotary E-Club
           </h1>
           <h2 id="club-sub-heading" className="text-lg md:text-3xl font-semibold text-secondary">
-            Rotary E-Club of D9400, South Africa.
+            District 9400 • Proudly Rooted in South Africa
           </h2>
           <h3 className="text-md md:text-2xl font-bold text-accent">
-            Connecting Global Communities Through Service.
+            Where Heritage Meets Humanity — Service Without Borders
           </h3>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-            Join the Portuguese International Rotary E-Club – a vibrant community connecting professionals
-            worldwide to serve, lead, and create lasting change, all from the convenience of a virtual space.
+            We are a vibrant, globally connected Rotary E-Club united by Portuguese heritage and a shared commitment to service. 
+            Join us as we empower communities, foster leadership, and create lasting impact — all through the power of digital engagement.
           </p>
           <div className="flex flex-wrap gap-4 pt-2 justify-center md:justify-start">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

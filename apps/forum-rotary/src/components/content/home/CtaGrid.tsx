@@ -18,19 +18,19 @@ import {
 const ctas = [
   {
     title: 'About Us',
-    description: 'Discover how our E-Club serves Portugal and beyond with purpose.',
+    description: 'Learn how our club blends Portuguese heritage with global Rotary values to drive community impact.',
     href: '/about',
     icon: Info,
   },
   {
     title: 'Membership',
-    description: 'Join a global network of Rotarians making a difference in Portugal.',
+    description: 'Become part of a forward-thinking Rotary E-Club—where service meets connection across borders.',
     href: '/membership',
     icon: UserPlus,
   },
   {
     title: 'Contact Us',
-    description: 'Reach out to collaborate or learn about our initiatives.',
+    description: 'Have questions or ideas? Let’s connect and explore how we can build a better world together.',
     href: '/contact',
     icon: Mail,
   },
@@ -48,10 +48,10 @@ export function CtaGrid() {
     >
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-4">
         <h2 id="cta-heading" className="text-4xl md:text-5xl text-primary-foreground font-bold tracking-tight">
-          Ready to Take Action?
+          Ready to Make a Difference?
         </h2>
         <p className="text-base md:text-lg max-w-2xl mx-auto text-primary-foreground/90">
-          Learn more, get involved, or reach out — we’d love to hear from you.
+          Whether you're here to learn, lead, or lend a hand—we’re excited to welcome you to our global community.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export function CtaGrid() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <div
-                          className="p-3 rounded-md bg-accent text-accent-foreground"
+                          className="p-3 rounded-md bg-secondary text-accent-foreground"
                           aria-label={`${item.title} icon`}
                         >
                           <Icon className="w-8 h-8" aria-hidden="true" />
@@ -106,15 +106,15 @@ export function CtaGrid() {
                         <Button
                           size="lg"
                           variant="outline"
-                          className="text-secondary border-secondary hover:bg-secondary/10 focus-visible:ring-2 focus-visible:ring-ring transition"
+                          className="text-secondary border-secondary hover:bg-secondary/10 hover:text-primary focus-visible:ring-2 focus-visible:ring-ring transition"
                           data-event="cta-click"
                           data-cta={item.title}
                         >
                           {item.title === 'Contact Us'
-                            ? 'Connect With Us'
+                            ? 'Get in Touch'
                             : item.title === 'Membership'
-                            ? 'Join Today'
-                            : 'Our Mission'}
+                            ? 'Become a Member'
+                            : 'Explore More'}
                         </Button>
                       </Link>
                     </motion.div>

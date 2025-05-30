@@ -15,27 +15,27 @@ import {
 const items = [
   {
     value: 'portuguese-heritage-flourishes',
-    title: 'Portuguese Heritage Flourishes',
+    title: 'Rooted in Portuguese Heritage',
     description:
-      'Celebrate and connect with our rich cultural identity, fostering fellowship among members who share a common heritage or appreciation for Portuguese culture.',
+      'Celebrate a legacy of resilience and culture. Our club honors Portuguese heritage while embracing diversity, fostering unity among members who share a love for tradition and service.',
   },
   {
     value: 'global-community-thrives',
-    title: 'Global Community Thrives',
+    title: 'A Global Rotary Family',
     description:
-      'Break down geographical barriers. Our virtual meetings and international membership allow for diverse perspectives, global networking, and collaborative projects that span continents.',
+      'Connect across continents. Our digital-first model brings together professionals and changemakers from around the world, creating a collaborative network with international reach and local impact.',
   },
   {
     value: 'meaningful-service-takes-action',
-    title: 'Meaningful Service Takes Action',
+    title: 'Driven by Service, Powered by Purpose',
     description:
-      'Inspired by Rotary International’s global initiatives, we focus our service efforts on areas that resonate with our members and directly benefit communities, particularly those with Portuguese ties.',
+      'Guided by Rotary International’s vision, we champion projects that matter—whether supporting youth, education, or humanitarian aid—with a special focus on Portuguese-speaking communities.',
   },
   {
     value: 'flexible-engagement-is-key',
-    title: 'Flexible Engagement is Key',
+    title: 'Service Without Borders or Boundaries',
     description:
-      'As an e-club, we meet virtually, making it easier for busy professionals and international members to participate actively and contribute to our collective mission without the constraints of traditional club meetings.',
+      'Life is busy—we get it. Our virtual format empowers you to participate meaningfully, no matter your schedule or location, making service more accessible than ever.',
   },
 ];
 
@@ -54,7 +54,7 @@ export function ValueProp() {
           Why Join Rotary?
         </h2>
         <p className="text-base md:text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-          Discover what makes the Portuguese Forum Rotary E-Club a place for growth, service, and connection.
+          Explore what makes the Portuguese International Rotary E-Club a unique space for purpose-driven connection and cultural pride.
         </p>
       </div>
 

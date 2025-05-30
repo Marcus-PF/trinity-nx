@@ -13,8 +13,6 @@ export function MissionVision() {
       className="relative bg-primary text-primary-foreground py-24 px-6 md:py-32 md:px-12"
       aria-labelledby="mission-vision-heading"
     >
-      {/* Optional background watermark - omitted for now */}
-
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-12 space-y-6">
         <motion.h2
           id="mission-vision-heading"
@@ -34,9 +32,8 @@ export function MissionVision() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed"
         >
-          At the heart of our Rotary club lies a shared belief in service, fellowship, and community-driven change.
+          Our club is a place where cultural pride meets purpose-driven service — a Rotary hub for those who believe in leading through action, unity, and global connection.
         </motion.p>
-
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -52,8 +49,7 @@ export function MissionVision() {
             <CardContent className="flex-grow p-6 md:p-8 space-y-4">
               <h3 className="text-2xl font-semibold text-secondary">Our Mission</h3>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                To connect people of action from the Portuguese and broader South African community in pursuit
-                of service, impact, and personal growth — guided by integrity, inclusion, and unity.
+                To unite individuals of Portuguese heritage — and those inspired by it — in meaningful service, cultural connection, and Rotary leadership. Through a virtual platform, we foster collaboration, uplift communities, and inspire lifelong engagement in service above self.
               </p>
             </CardContent>
           </Card>
@@ -71,8 +67,7 @@ export function MissionVision() {
             <CardContent className="flex-grow p-6 md:p-8 space-y-4">
               <h3 className="text-2xl font-semibold text-secondary">Our Vision</h3>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                A South Africa where Rotary empowers every citizen to serve with purpose,
-                lead with courage, and build a better tomorrow — one act of service at a time.
+                A global Rotary E-Club anchored in culture, compassion, and innovation — empowering people everywhere to lead with empathy, serve with heart, and connect across borders to create a better, more united world.
               </p>
             </CardContent>
           </Card>

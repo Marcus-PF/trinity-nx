@@ -50,7 +50,8 @@ export function FourWayTest() {
           The Four-Way Test
         </h2>
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-          Explore Rotary’s ethical principles guiding our service in Portugal and beyond.
+          Since 1932, this timeless Rotary code has helped leaders evaluate decisions not by profit or politics, 
+          but by virtue and impact. These four simple questions remain a compass for our conduct, our conversations, and our commitment to doing good.
         </p>
       </div>
 

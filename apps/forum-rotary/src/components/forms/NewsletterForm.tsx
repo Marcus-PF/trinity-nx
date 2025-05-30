@@ -39,8 +39,7 @@ export function NewsletterForm({ formId = 'xrbqrrao' }) {
             You’re Subscribed!
           </h2>
           <p className="text-sm text-primary-foreground/80">
-            Thank you for joining our community. We’ll keep you updated with the
-            latest news and events.
+            Welcome to our Rotary family. We’ll keep you inspired with stories, service opportunities, and upcoming events.
           </p>
         </div>
       </motion.section>
@@ -60,9 +59,8 @@ export function NewsletterForm({ formId = 'xrbqrrao' }) {
           >
             Stay Connected
           </h2>
-          <p className="text-base md:text-lg max-w-lg mx-auto text-primary-foreground/90">
-            Get the latest updates on Rotary events, initiatives, and impact —
-            delivered straight to your inbox.
+          <p className="text-base md:text-lg max-w-2xl mx-auto text-primary-foreground/90">
+            Be part of our journey. Get updates on projects, progress, and the powerful impact Rotarians are making around the world.
           </p>
         </div>
 

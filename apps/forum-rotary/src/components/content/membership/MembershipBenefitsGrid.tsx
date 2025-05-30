@@ -6,19 +6,19 @@ import { BenefitCard } from './BenefitCard';
 const benefits = [
   {
     title: 'Community Impact',
-    description: 'Engage in projects that uplift lives and create lasting change.',
+    description: 'Be part of meaningful service initiatives that uplift lives, solve real problems, and strengthen communities.',
   },
   {
     title: 'Global Network',
-    description: 'Join 1.4 million Rotarians worldwide committed to service.',
+    description: 'Join a worldwide family of 1.4 million Rotarians — all working together to make a difference, wherever they are.',
   },
   {
     title: 'Leadership Growth',
-    description: 'Gain access to leadership training and service opportunities.',
+    description: 'Develop your leadership through service roles, mentorship, and purpose-driven collaboration.',
   },
   {
-    title: 'Professional Development',
-    description: 'Collaborate with professionals from diverse industries and backgrounds.',
+    title: 'Professional Connections',
+    description: 'Engage with professionals across industries, creating lifelong partnerships and growth opportunities.',
   },
 ];
 
@@ -50,7 +50,7 @@ export function MembershipBenefitsGrid() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed"
         >
-          Rotary connects people of action — leaders who are committed to service and fellowship.
+          Rotary brings together people of action — connected by values, driven by service, and empowered to create lasting change.
         </motion.p>
       </div>
 

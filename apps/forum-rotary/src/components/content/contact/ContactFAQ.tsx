@@ -12,29 +12,29 @@ import {
 
 const faqs = [
   {
-    question: 'How can I join the Portuguese Forum Rotary Club?',
+    question: 'How do I become a member of the Portuguese International Rotary E-Club?',
     answer:
-      'You can express your interest by filling out our membership application form. After submission, a club representative will contact you to discuss the next steps.',
+      'Simply complete our membership interest form. One of our members will be in touch to guide you through the next steps and answer any questions.',
   },
   {
-    question: 'Do I need to be invited to join?',
+    question: 'Do I need an invitation to join?',
     answer:
-      'While Rotary clubs often invite prospective members, we also welcome direct applications from individuals who align with our values and mission.',
+      'Not at all. While some members are referred, we warmly welcome direct applications from anyone who shares our values and spirit of service.',
   },
   {
-    question: 'What are the membership fees?',
+    question: 'What does it cost to be a member?',
     answer:
-      'Membership fees vary by club and cover administrative costs and contributions to Rotary International. Please contact us for specific details.',
+      'Membership includes a modest fee that helps cover Rotary International dues and local club operations. We’ll provide full details once you reach out.',
   },
   {
-    question: 'Can I attend a meeting before deciding to join?',
+    question: 'Can I attend a meeting before I commit?',
     answer:
-      'Absolutely! We encourage prospective members to attend a meeting to learn more about our club and activities.',
+      'Yes! We encourage you to join a virtual session or event to experience our club culture before making a decision.',
   },
   {
-    question: 'Are there online meetings available?',
+    question: 'Are all meetings held online?',
     answer:
-      'Yes, we offer virtual meetings for members who cannot attend in person. Please reach out for more information on our meeting schedule.',
+      'As an E-Club, most of our gatherings are hosted virtually — perfect for staying involved from anywhere in the world.',
   },
 ];
 
@@ -56,7 +56,7 @@ export function ContactFAQ() {
           Frequently Asked Questions
         </h2>
         <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-          Everything you need to know before becoming a part of our Rotary family.
+          Answers to common questions about membership, meetings, and getting involved.
         </p>
       </div>
 
